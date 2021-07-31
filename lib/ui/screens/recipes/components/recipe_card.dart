@@ -15,66 +15,93 @@ class RecipeCard extends StatelessWidget {
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
 
-    return Card(
-      child: Column(
-        children: [
-          Container(
-            width: double.infinity,
-            height: 140,
-            child: Image.network(
-              recipe.imageUrl,
-              fit: BoxFit.cover,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 25),
+      child: Container(
+        margin: EdgeInsets.only(bottom: 20),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(7),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.15),
+              spreadRadius: 5,
+              blurRadius: 6,
+              offset: Offset(0, 0), // changes position of shadow
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(15),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(recipe.name),
-                SizedBox(height: 15),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Text('+- ${recipe.time.toString()}'),
-                        SizedBox(width: 15),
-                        Text('${recipe.ingredients} ingredients'),
-                      ],
-                    ),
-                    // ignore: deprecated_member_use
-                    OutlinedButton(
-                      onPressed: null,
-                      style: OutlinedButton.styleFrom(
-                        primary: Colors.white,
-                        side: BorderSide(
-                            color: Theme.of(context).primaryColor, width: 0.5),
-                        padding: EdgeInsets.zero,
-                      ),
-                      child: Row(
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            ClipRRect(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(10),
+                  topRight: Radius.circular(10),
+                ),
+                child: Image.network(
+                  recipe.imageUrl,
+                  height: 150,
+                  fit: BoxFit.cover,
+                )),
+            Padding(
+              padding: const EdgeInsets.all(15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    recipe.name,
+                    style: textTheme.headline5,
+                  ),
+                  SizedBox(height: 15),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
                         children: [
-                          Icon(
-                            BootstrapIcons.play,
-                            color: theme.primaryColor,
-                          ),
-                          SizedBox(width: 5),
                           Text(
-                            'Play',
-                            style: Theme.of(context)
-                                .textTheme
-                                .caption!
-                                .copyWith(color: theme.primaryColor),
+                            '+- ${recipe.time.toString()}',
                           ),
+                          SizedBox(width: 15),
+                          Text('${recipe.ingredients} ingredients'),
                         ],
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                      InkWell(
+                        onTap: () => {},
+                        child: Container(
+                          padding:
+                              EdgeInsets.symmetric(vertical: 2, horizontal: 7),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                              color: Theme.of(context).primaryColor,
+                              width: 0.5,
+                            ),
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          child: Row(
+                            children: [
+                              Icon(
+                                BootstrapIcons.play,
+                                color: theme.primaryColor,
+                              ),
+                              SizedBox(width: 5),
+                              Text(
+                                'Cook',
+                                style: textTheme.caption!
+                                    .copyWith(color: theme.primaryColor),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

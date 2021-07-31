@@ -1,5 +1,5 @@
 import 'package:desafio/core/localization/loader.g.dart';
-import 'package:desafio/ui/screens/edit_recipe/edit_recipe_screen.dart';
+import 'package:desafio/ui/screens/recipes/recipes_screen.dart';
 import 'package:desafio/ui/theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +27,11 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarBrightness: Brightness.dark,
+    ));
+
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitDown,
       DeviceOrientation.portraitUp,
@@ -39,6 +43,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: makeAppTheme(),
         locale: context.locale,
-        home: EditRecipeScreen());
+        home: RecipesScreen());
   }
 }

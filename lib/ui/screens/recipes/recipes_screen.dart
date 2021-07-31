@@ -1,3 +1,4 @@
+import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:desafio/core/localization/locale_keys.g.dart';
 import 'package:desafio/core/models/recipe_model.dart';
 import 'package:desafio/ui/screens/recipes/components/recipe_card.dart';
@@ -39,29 +40,69 @@ class RecipesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(25),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(25, 25, 25, 0),
+            child: Column(
               children: [
-                Text(LocaleKeys.myRecipes.tr()),
-                Text(LocaleKeys.addNews.tr()),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      LocaleKeys.myRecipes.tr(),
+                      style: textTheme.headline2,
+                    ),
+                    Text(
+                      LocaleKeys.addNews.tr(),
+                      style: textTheme.headline6,
+                    )
+                  ],
+                ),
+                SizedBox(height: 15),
+                Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(7),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.1),
+                          spreadRadius: 5,
+                          blurRadius: 6,
+                          offset: Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Wstern (5)',
+                          style: textTheme.button,
+                        ),
+                        Icon(
+                          BootstrapIcons.chevron_down,
+                          size: 20,
+                        )
+                      ],
+                    )),
               ],
             ),
-            SizedBox(height: 15),
-            Expanded(
-              child: ListView.builder(
-                itemCount: recipes.length,
-                itemBuilder: (context, index) {
-                  return RecipeCard(recipes[index]);
-                },
-              ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: recipes.length,
+              itemBuilder: (context, index) {
+                return RecipeCard(recipes[index]);
+              },
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

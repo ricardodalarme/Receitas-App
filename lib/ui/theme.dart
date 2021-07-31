@@ -13,6 +13,11 @@ ThemeData makeAppTheme() {
       fontSize: 32,
       color: textColor,
     ),
+    headline5: TextStyle(
+      fontSize: 20,
+      color: textColor,
+      fontWeight: FontWeight.w600,
+    ),
     headline6: TextStyle(
       fontSize: 16,
       color: primaryColor,
@@ -36,7 +41,6 @@ ThemeData makeAppTheme() {
           primary: primaryColor,
           elevation: 0,
           minimumSize: Size(double.infinity, 50)));
- 
 
   return ThemeData(
     primaryColor: primaryColor,
