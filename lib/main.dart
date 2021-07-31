@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
+        debugShowCheckedModeBanner: false,
         theme: makeAppTheme(),
         locale: context.locale,
         home: LoginScreen());
