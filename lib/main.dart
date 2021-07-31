@@ -1,5 +1,5 @@
 import 'package:desafio/core/localization/loader.g.dart';
-import 'package:desafio/ui/screens/login/login_screen.dart';
+import 'package:desafio/ui/screens/edit_recipe/edit_recipe_screen.dart';
 import 'package:desafio/ui/theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -39,6 +39,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: makeAppTheme(),
         locale: context.locale,
-        home: LoginScreen());
+        home: EditRecipeScreen());
   }
 }
