@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Categories extends StatelessWidget {
-  int quantity;
-  String title;
-  bool isCurrent;
+  final int quantity;
+  final String title;
+  final bool isCurrent;
 
   Categories(this.quantity, this.title, this.isCurrent, {Key? key})
       : super(key: key);

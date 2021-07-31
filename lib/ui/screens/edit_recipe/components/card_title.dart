@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CardTitle extends StatelessWidget {
-  TextTheme textTheme;
-  String title;
+  final TextTheme textTheme;
+  final String title;
 
   CardTitle(this.textTheme, this.title, {Key? key}) : super(key: key);
 
