@@ -29,13 +29,13 @@ ThemeData makeAppTheme() {
       focusedBorder:
           UnderlineInputBorder(borderSide: BorderSide(color: primaryColor)),
       alignLabelWithHint: true);
-  final buttonTheme = ButtonThemeData(
-      colorScheme: ColorScheme.light(primary: primaryColor),
-      buttonColor: primaryColor,
-      splashColor: primaryColor,
-      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-      textTheme: ButtonTextTheme.primary,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)));
+  final elevatedButtonTheme = ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.symmetric(vertical: 15),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          primary: primaryColor,
+          elevation: 0,
+          minimumSize: Size(double.infinity, 50)));
 
   return ThemeData(
       primaryColor: primaryColor,
@@ -45,5 +45,5 @@ ThemeData makeAppTheme() {
       textTheme: textTheme,
       inputDecorationTheme: inputDecorationTheme,
       dividerColor: dividerColor,
-      buttonTheme: buttonTheme);
+      elevatedButtonTheme: elevatedButtonTheme);
 }

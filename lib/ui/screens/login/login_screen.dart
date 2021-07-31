@@ -1,5 +1,6 @@
 import 'package:desafio/core/localization/locale_keys.g.dart';
 import 'package:desafio/ui/screens/login/components/facebook_button.dart';
+import 'package:desafio/ui/screens/login/components/text_input_field.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +29,7 @@ class LoginScreen extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: EdgeInsets.all(38),
+              padding: EdgeInsets.all(25),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -36,23 +37,22 @@ class LoginScreen extends StatelessWidget {
                     LocaleKeys.pleaseLogin.tr(),
                     style: textTheme.bodyText2,
                   ),
-                  SizedBox(height: 50),
-                  TextField(
-                    decoration:
-                        InputDecoration(hintText: LocaleKeys.emailAddress.tr()),
+                  SizedBox(height: 70),
+                  TextInputField(hintText: LocaleKeys.emailAddress.tr()),
+                  SizedBox(height: 30),
+                  TextInputField(
+                    hintText: LocaleKeys.password.tr(),
+                    isPassword: true,
+                    buttonText: LocaleKeys.forgotPassowrd.tr(),
                   ),
-                  SizedBox(height: 23),
-                  TextField(
-                    decoration:
-                        InputDecoration(hintText: LocaleKeys.password.tr()),
-                  ),
-                  SizedBox(height: 23),
+                  SizedBox(height: 30),
                   ElevatedButton(
                     onPressed: () {},
                     child: Text(LocaleKeys.login.tr()),
                   ),
-                  SizedBox(height: 23),
+                  SizedBox(height: 15),
                   FacebookButton(),
+                  SizedBox(height: 40),
                   Center(
                     child: Column(
                       children: [
@@ -60,6 +60,7 @@ class LoginScreen extends StatelessWidget {
                           LocaleKeys.newUser.tr(),
                           style: textTheme.bodyText2,
                         ),
+                        SizedBox(height: 10),
                         Text(
                           LocaleKeys.createAccount.tr(),
                           style: textTheme.headline6,
