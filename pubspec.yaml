@@ -9,6 +9,7 @@ environment:
 dependencies:
   easy_localization: ^3.0.0
   bootstrap_icons: ^1.5.0
+  get: ^4.3.4
   
   flutter:
     sdk: flutter

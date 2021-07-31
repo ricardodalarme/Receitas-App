@@ -1,9 +1,8 @@
-import 'package:desafio/core/localization/locale_keys.g.dart';
+import 'package:desafio/core/localization/locale_extension.dart';
 import 'package:desafio/ui/screens/edit_recipe/components/card_title.dart';
 import 'package:desafio/ui/screens/edit_recipe/components/gallery_photo.dart';
 import 'package:desafio/ui/screens/edit_recipe/components/ingredient_photo.dart';
 import 'package:desafio/ui/screens/edit_recipe/components/topics.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class EditRecipeScreen extends StatelessWidget {
@@ -27,14 +26,14 @@ class EditRecipeScreen extends StatelessWidget {
                     color: Colors.grey,
                   ),
                   Text(
-                    LocaleKeys.backProfile.tr(),
+                    LocaleKeys.backProfile.tra,
                     style: textTheme.bodyText2,
                   ),
                 ],
               ),
               SizedBox(height: 20),
               Text(
-                LocaleKeys.editRecipe.tr(),
+                LocaleKeys.editRecipe.tra,
                 style: textTheme.headline2,
               ),
               SizedBox(height: 40),
@@ -56,7 +55,7 @@ class EditRecipeScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Text(
-                            LocaleKeys.recipeName.tr(),
+                            LocaleKeys.recipeName.tra,
                             style: textTheme.bodyText2,
                           ),
                           Column(
@@ -87,7 +86,7 @@ class EditRecipeScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(15),
                   child: Column(
                     children: [
-                      CardTitle(textTheme, LocaleKeys.gallery.tr()),
+                      CardTitle(textTheme, LocaleKeys.gallery.tra),
                       SizedBox(height: 20),
                       Container(
                         height: 120,
@@ -116,7 +115,7 @@ class EditRecipeScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CardTitle(textTheme, LocaleKeys.ingredients.tr()),
+                      CardTitle(textTheme, LocaleKeys.ingredients.tra),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -147,7 +146,7 @@ class EditRecipeScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CardTitle(textTheme, LocaleKeys.howCook.tr()),
+                      CardTitle(textTheme, LocaleKeys.howCook.tra),
                       SizedBox(height: 20),
                       Topics(textTheme, 1, 'Heat a Belgian waffle iron'),
                       SizedBox(height: 20),

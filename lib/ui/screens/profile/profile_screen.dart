@@ -1,7 +1,6 @@
-import 'package:desafio/core/localization/locale_keys.g.dart';
+import 'package:desafio/core/localization/locale_extension.dart';
 import 'package:desafio/ui/screens/profile/components/categories.dart';
 import 'package:desafio/ui/screens/profile/components/food_card.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -43,7 +42,7 @@ class ProfileScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    LocaleKeys.myKitchen.tr(),
+                    LocaleKeys.myKitchen.tra,
                     style: textTheme.headline2,
                   ),
                   Row(

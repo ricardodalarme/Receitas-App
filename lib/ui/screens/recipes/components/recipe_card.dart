@@ -1,6 +1,8 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
+import 'package:desafio/core/config/routes.dart';
 import 'package:desafio/core/models/recipe_model.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class RecipeCard extends StatelessWidget {
   final Recipe recipe;
@@ -17,58 +19,60 @@ class RecipeCard extends StatelessWidget {
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25),
-      child: Container(
-        margin: EdgeInsets.only(bottom: 20),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(7),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.15),
-              spreadRadius: 5,
-              blurRadius: 6,
-              offset: Offset(0, 0), // changes position of shadow
-            ),
-          ],
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            ClipRRect(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(10),
-                  topRight: Radius.circular(10),
-                ),
-                child: Image.network(
-                  recipe.imageUrl,
-                  height: 150,
-                  fit: BoxFit.cover,
-                )),
-            Padding(
-              padding: const EdgeInsets.all(15),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    recipe.name,
-                    style: textTheme.headline5,
+      child: InkWell(
+        onTap: () {
+          Get.toNamed(Routes.editRecipe);
+        },
+        child: Container(
+          margin: EdgeInsets.only(bottom: 20),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(7),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.15),
+                spreadRadius: 5,
+                blurRadius: 6,
+                offset: Offset(0, 0), // changes position of shadow
+              ),
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              ClipRRect(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10),
                   ),
-                  SizedBox(height: 15),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            '+- ${recipe.time.toString()}',
-                          ),
-                          SizedBox(width: 15),
-                          Text('${recipe.ingredients} ingredients'),
-                        ],
-                      ),
-                      InkWell(
-                        onTap: () => {},
-                        child: Container(
+                  child: Image.network(
+                    recipe.imageUrl,
+                    height: 150,
+                    fit: BoxFit.cover,
+                  )),
+              Padding(
+                padding: const EdgeInsets.all(15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      recipe.name,
+                      style: textTheme.headline5,
+                    ),
+                    SizedBox(height: 15),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              '+- ${recipe.time.toString()}',
+                            ),
+                            SizedBox(width: 15),
+                            Text('${recipe.ingredients} ingredients'),
+                          ],
+                        ),
+                        Container(
                           padding:
                               EdgeInsets.symmetric(vertical: 2, horizontal: 7),
                           decoration: BoxDecoration(
@@ -94,13 +98,13 @@ class RecipeCard extends StatelessWidget {
                             ],
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -1,8 +1,7 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
-import 'package:desafio/core/localization/locale_keys.g.dart';
+import 'package:desafio/core/localization/locale_extension.dart';
 import 'package:desafio/core/models/recipe_model.dart';
 import 'package:desafio/ui/screens/recipes/components/recipe_card.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class RecipesScreen extends StatelessWidget {
@@ -53,11 +52,11 @@ class RecipesScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      LocaleKeys.myRecipes.tr(),
+                      LocaleKeys.myRecipes.tra,
                       style: textTheme.headline2,
                     ),
                     Text(
-                      LocaleKeys.addNews.tr(),
+                      LocaleKeys.addNews.tra,
                       style: textTheme.headline6,
                     )
                   ],

@@ -1,5 +1,4 @@
-import 'package:desafio/core/localization/locale_keys.g.dart';
-import 'package:easy_localization/easy_localization.dart';
+import 'package:desafio/core/localization/locale_extension.dart';
 import 'package:flutter/material.dart';
 
 class FacebookButton extends StatelessWidget {
@@ -30,7 +29,7 @@ class FacebookButton extends StatelessWidget {
                 ),
                 SizedBox(width: 20),
                 Text(
-                  LocaleKeys.facebookLogin.tr(),
+                  LocaleKeys.facebookLogin.tra,
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 30,

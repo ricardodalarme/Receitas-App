@@ -1,8 +1,9 @@
-import 'package:desafio/core/localization/locale_keys.g.dart';
+import 'package:desafio/core/config/routes.dart';
+import 'package:desafio/core/localization/locale_extension.dart';
 import 'package:desafio/ui/screens/login/components/facebook_button.dart';
 import 'package:desafio/ui/screens/login/components/text_input_field.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -22,7 +23,7 @@ class LoginScreen extends StatelessWidget {
                   left: 25,
                   top: 133,
                   child: Text(
-                    LocaleKeys.welcomeBack.tr(),
+                    LocaleKeys.welcomeBack.tra,
                     style: textTheme.headline2,
                   ),
                 ),
@@ -34,21 +35,23 @@ class LoginScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    LocaleKeys.pleaseLogin.tr(),
+                    LocaleKeys.pleaseLogin.tra,
                     style: textTheme.bodyText2,
                   ),
                   SizedBox(height: 70),
-                  TextInputField(hintText: LocaleKeys.emailAddress.tr()),
+                  TextInputField(hintText: LocaleKeys.emailAddress.tra),
                   SizedBox(height: 30),
                   TextInputField(
-                    hintText: LocaleKeys.password.tr(),
+                    hintText: LocaleKeys.password.tra,
                     isPassword: true,
-                    buttonText: LocaleKeys.forgotPassowrd.tr(),
+                    buttonText: LocaleKeys.forgotPassowrd.tra,
                   ),
                   SizedBox(height: 30),
                   ElevatedButton(
-                    onPressed: () {},
-                    child: Text(LocaleKeys.login.tr()),
+                    onPressed: () {
+                      Get.offAllNamed(Routes.profile);
+                    },
+                    child: Text(LocaleKeys.login.tra),
                   ),
                   SizedBox(height: 15),
                   FacebookButton(),
@@ -57,12 +60,12 @@ class LoginScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          LocaleKeys.newUser.tr(),
+                          LocaleKeys.newUser.tra,
                           style: textTheme.bodyText2,
                         ),
                         SizedBox(height: 10),
                         Text(
-                          LocaleKeys.createAccount.tr(),
+                          LocaleKeys.createAccount.tra,
                           style: textTheme.headline6,
                         ),
                       ],
