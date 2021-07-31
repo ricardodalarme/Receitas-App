@@ -1,5 +1,6 @@
 import 'package:desafio/core/localization/loader.g.dart';
-import 'package:desafio/ui/screens/home/home_screen.dart';
+import 'package:desafio/ui/screens/login/login_screen.dart';
+import 'package:desafio/ui/theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -16,7 +17,7 @@ Future<void> main() async {
         supportedLocales: [
           Locale('en', 'US'),
         ],
-        path: 'translations', 
+        path: 'translations',
         assetLoader: CodegenLoader(),
         fallbackLocale: Locale('en', 'US'),
         child: MyApp()),
@@ -35,7 +36,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
+        theme: appTheme,
         locale: context.locale,
-        home: HomeScreen());
+        home: LoginScreen());
   }
 }
