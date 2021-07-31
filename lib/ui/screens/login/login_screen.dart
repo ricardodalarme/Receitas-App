@@ -19,7 +19,7 @@ class LoginScreen extends StatelessWidget {
               children: [
                 Container(height: 285, color: Colors.yellow),
                 Positioned(
-                  left: 38,
+                  left: 25,
                   top: 133,
                   child: Text(
                     LocaleKeys.welcomeBack.tr(),
