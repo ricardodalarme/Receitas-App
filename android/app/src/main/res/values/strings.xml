@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Desafio Jurema</string>  
+    <string name="facebook_app_id">231696615360884</string>
+    <string name="fb_login_protocol_scheme">fb231696615360884</string>
+</resources>
