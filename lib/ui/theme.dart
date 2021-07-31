@@ -36,14 +36,16 @@ ThemeData makeAppTheme() {
           primary: primaryColor,
           elevation: 0,
           minimumSize: Size(double.infinity, 50)));
+ 
 
   return ThemeData(
-      primaryColor: primaryColor,
-      highlightColor: secondaryColor,
-      accentColor: primaryColor,
-      backgroundColor: Colors.white,
-      textTheme: textTheme,
-      inputDecorationTheme: inputDecorationTheme,
-      dividerColor: dividerColor,
-      elevatedButtonTheme: elevatedButtonTheme);
+    primaryColor: primaryColor,
+    highlightColor: secondaryColor,
+    accentColor: primaryColor,
+    backgroundColor: Colors.white,
+    textTheme: textTheme,
+    inputDecorationTheme: inputDecorationTheme,
+    dividerColor: dividerColor,
+    elevatedButtonTheme: elevatedButtonTheme,
+  );
 }
