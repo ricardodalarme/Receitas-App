@@ -74,7 +74,7 @@ class InfoCard extends EditedCard {
               ),
               Flexible(
                 child: Text(
-                  'Sweet, Coconut, Quick, Easy, Homemade',
+                  recipe.tags.join(', '),
                   style: textTheme.bodyText1,
                 ),
               ),
