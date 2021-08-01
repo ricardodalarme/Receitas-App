@@ -20,9 +20,8 @@ class RecipeCard extends StatelessWidget {
 
     return InkWell(
       onTap: () {
-        final b = Routes.editRecipe.replaceFirst(':id', recipe.id.toString());
-
-        Get.toNamed(b);
+        final route = Routes.editRecipe.replaceFirst(':id', recipe.id.toString());
+        Get.toNamed(route);
       },
       child: Container(
         margin: EdgeInsets.only(bottom: 20),
@@ -34,7 +33,6 @@ class RecipeCard extends StatelessWidget {
               color: Colors.grey.withOpacity(0.15),
               spreadRadius: 5,
               blurRadius: 6,
-              offset: Offset(0, 0), // changes position of shadow
             ),
           ],
         ),

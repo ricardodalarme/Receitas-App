@@ -7,6 +7,8 @@ import 'package:desafio/modules/edit_recipe/cards/info_card.dart';
 import 'package:desafio/modules/edit_recipe/cards/ingredients_card.dart';
 import 'package:desafio/modules/edit_recipe/edit_recipe_controller.dart';
 import 'package:desafio/widgets/back_label_button.dart';
+import 'package:desafio/widgets/drop_down_button.dart';
+import 'package:desafio/widgets/text_input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 
@@ -47,33 +49,8 @@ class EditRecipePage extends GetView<EditRecipeController> {
                             )),
                         SizedBox(width: 20),
                         Expanded(
-                          child: Container(
-                            height: 80,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Text(
-                                  LocaleKeys.recipeName.tra,
-                                  style: textTheme.bodyText2,
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      recipe.name!,
-                                      style: TextStyle(
-                                          fontSize: 18, color: Colors.black),
-                                    ),
-                                    SizedBox(height: 5),
-                                    Container(
-                                      height: 1,
-                                      color: Colors.grey,
-                                    )
-                                  ],
-                                ),
-                              ],
-                            ),
+                          child: TextInputField(
+                            hintText: LocaleKeys.recipeName.tra,
                           ),
                         ),
                       ],
@@ -93,45 +70,15 @@ class EditRecipePage extends GetView<EditRecipeController> {
                       children: [
                         Expanded(
                           flex: 3,
-                          child: InkWell(
-                            onTap: () => {},
-                            child: Container(
-                              height: 50,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.15),
-                                    spreadRadius: 3,
-                                    blurRadius: 3,
-                                  ),
-                                ],
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(12),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Westen (5)',
-                                      style: textTheme.bodyText1,
-                                    ),
-                                    Icon(Icons.arrow_downward_sharp)
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
+                          child: DropDownButton(text: 'Western (5)'),
                         ),
-                        SizedBox(width: 10),
+                        SizedBox(width: 15),
                         Expanded(
                           flex: 2,
                           child: InkWell(
                             onTap: () => {},
                             child: Container(
-                              height: 50,
+                              height: 60,
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 border: Border.all(
