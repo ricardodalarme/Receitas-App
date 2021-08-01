@@ -4,6 +4,7 @@ import 'package:desafio/modules/edit_recipe/components/gallery_photo.dart';
 import 'package:desafio/modules/edit_recipe/components/ingredient_photo.dart';
 import 'package:desafio/modules/edit_recipe/components/topics.dart';
 import 'package:desafio/modules/edit_recipe/edit_recipe_controller.dart';
+import 'package:desafio/widgets/back_label_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 
@@ -25,18 +26,7 @@ class EditRecipePage extends GetView<EditRecipeController> {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.arrow_back_ios,
-                          color: Colors.grey,
-                        ),
-                        Text(
-                          LocaleKeys.backProfile.tra,
-                          style: textTheme.bodyText2,
-                        ),
-                      ],
-                    ),
+                    BackLabelButton(text: LocaleKeys.backRecipes.tra),
                     SizedBox(height: 20),
                     Text(
                       LocaleKeys.editRecipe.tra,
