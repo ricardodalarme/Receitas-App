@@ -13,6 +13,8 @@ class GalleryCard extends EditedCard {
 
   @override
   Widget body(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
     return Obx(
       () {
         final recipe = controller.recipe.value;
@@ -21,30 +23,41 @@ class GalleryCard extends EditedCard {
           return CircularProgressIndicator();
         }
 
-        var count = 2;
-        var images = <Widget>[];
-        if (recipe.galleryPhotos.isEmpty) {
-          count = 0;
-        } else if (recipe.galleryPhotos.length <= 4) {
-          count = recipe.galleryPhotos.length - 1;
+        final images = <Widget>[];
+        final maxImages = 3;
+        final difference = recipe.galleryPhotos.length - maxImages + 1;
+
+        for (var i = 0; i < recipe.galleryPhotos.length; i++) {
+          if (recipe.galleryPhotos.length > maxImages && i == maxImages - 1) {
+            break;
+          }
+
+          images.add(GalleryPhoto(recipe.galleryPhotos[i]));
         }
 
-        for (var i = 1; i <= count; i++)
-          images.add(GalleryPhoto(recipe.galleryPhotos[i]));
-
-        if (recipe.galleryPhotos.length > 4)
-          images.add(Stack(
-            children: [
-              GalleryPhoto(recipe.galleryPhotos[4]),
-              Center(
-                child: Text('+10'),
-              ),
-            ],
-          ));
+        if (recipe.galleryPhotos.length > maxImages)
+          images.add(
+            Stack(
+              children: [
+                GalleryPhoto(
+                  recipe.galleryPhotos[maxImages],
+                  filter: true,
+                ),
+                Positioned.fill(
+                  child: Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        '+$difference',
+                        style: textTheme.button,
+                      )),
+                ),
+              ],
+            ),
+          );
 
         return Column(
           children: [
-            if (count != 0)
+            if (recipe.galleryPhotos.isNotEmpty)
               CachedNetworkImage(
                 imageUrl: recipe.galleryPhotos[0],
                 height: 150,

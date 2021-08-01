@@ -1,17 +1,30 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class IngredientPhoto extends StatelessWidget {
-  IngredientPhoto({Key? key}) : super(key: key);
+  final String url;
+  final bool filter;
+
+  IngredientPhoto(this.url, {Key? key, this.filter = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      flex: 1,
-      child: Container(
-        height: 100,
+    return CachedNetworkImage(
+      imageUrl: url,
+      height: 75,
+      width: 75,
+      fit: BoxFit.cover,
+      imageBuilder: (context, imageProvider) => Container(
+        margin: EdgeInsets.only(right: 10),
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: Colors.grey,
+          image: DecorationImage(
+            image: imageProvider,
+            fit: BoxFit.cover,
+            colorFilter: filter == true
+                ? ColorFilter.mode(Colors.white54, BlendMode.lighten)
+                : null,
+          ),
         ),
       ),
     );

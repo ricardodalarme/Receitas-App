@@ -11,17 +11,17 @@ class GalleryPhoto extends StatelessWidget {
   Widget build(BuildContext context) {
     return CachedNetworkImage(
       imageUrl: url,
-      height: 100,
-      width: 100,
+      height: 130,
+      width: 130,
       fit: BoxFit.cover,
       imageBuilder: (context, imageProvider) => Container(
-        margin: EdgeInsets.all(20),
+        margin: EdgeInsets.only(top: 10, right: 10),
         decoration: BoxDecoration(
           image: DecorationImage(
             image: imageProvider,
             fit: BoxFit.cover,
-            colorFilter: filter
-                ? ColorFilter.mode(Colors.white, BlendMode.colorBurn)
+            colorFilter: filter == true
+                ? ColorFilter.mode(Colors.white54, BlendMode.lighten)
                 : null,
           ),
         ),
