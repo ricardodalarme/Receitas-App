@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:desafio/localization/locale_extension.dart';
-import 'package:desafio/modules/edit_recipe/components/edited_card.dart';
-import 'package:desafio/modules/edit_recipe/components/gallery_photo.dart';
+import 'package:desafio/modules/edit_recipe/widgets/edited_card.dart';
+import 'package:desafio/modules/edit_recipe/widgets/gallery_photo.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 

@@ -1,6 +1,6 @@
 import 'package:desafio/localization/locale_extension.dart';
-import 'package:desafio/modules/recipes/components/recipe_card.dart';
 import 'package:desafio/modules/recipes/recipes_controller.dart';
+import 'package:desafio/modules/recipes/widgets/recipe_card.dart';
 import 'package:desafio/widgets/back_label_button.dart';
 import 'package:desafio/widgets/drop_down_button.dart';
 import 'package:flutter/material.dart';

@@ -1,6 +1,6 @@
 import 'package:desafio/localization/locale_extension.dart';
-import 'package:desafio/modules/edit_recipe/components/edited_card.dart';
-import 'package:desafio/modules/edit_recipe/components/topics.dart';
+import 'package:desafio/modules/edit_recipe/widgets/edited_card.dart';
+import 'package:desafio/modules/edit_recipe/widgets/topics.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

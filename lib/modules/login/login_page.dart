@@ -1,6 +1,6 @@
 import 'package:desafio/localization/locale_extension.dart';
-import 'package:desafio/modules/login/components/facebook_button.dart';
 import 'package:desafio/modules/login/login_controller.dart';
+import 'package:desafio/modules/login/widgets/facebook_button.dart';
 import 'package:desafio/routes/routes.dart';
 import 'package:desafio/widgets/text_input_field.dart';
 import 'package:flutter/material.dart';

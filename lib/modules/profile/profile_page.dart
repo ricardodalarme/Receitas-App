@@ -1,9 +1,9 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:desafio/localization/locale_extension.dart';
-import 'package:desafio/modules/profile/components/categories.dart';
-import 'package:desafio/modules/profile/components/food_card.dart';
 import 'package:desafio/modules/profile/profile_controller.dart';
+import 'package:desafio/modules/profile/widgets/categories.dart';
+import 'package:desafio/modules/profile/widgets/food_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -72,8 +72,8 @@ class ProfilePage extends GetView<ProfileController> {
                       children: [
                         CircleAvatar(
                           radius: 45,
-                          backgroundImage: CachedNetworkImageProvider(
-                              profile.photo),
+                          backgroundImage:
+                              CachedNetworkImageProvider(profile.photo),
                         ),
                         SizedBox(width: 20),
                         Expanded(
@@ -140,10 +140,9 @@ class ProfilePage extends GetView<ProfileController> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Categories(20, LocaleKeys.recipes.tra, true),
-                        Categories(profile.saved,
-                            LocaleKeys.saved.tra, false),
-                        Categories(profile.following,
-                            LocaleKeys.following.tra, false),
+                        Categories(profile.saved, LocaleKeys.saved.tra, false),
+                        Categories(
+                            profile.following, LocaleKeys.following.tra, false),
                       ],
                     ),
                     Divider(),
