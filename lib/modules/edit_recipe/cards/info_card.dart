@@ -1,3 +1,4 @@
+import 'package:desafio/localization/locale_extension.dart';
 import 'package:desafio/modules/edit_recipe/components/edited_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -6,7 +7,7 @@ class InfoCard extends EditedCard {
   InfoCard({Key? key}) : super(key: key);
 
   @override
-  String get title => 'Addiotional Info';
+  String get title => LocaleKeys.additionalInfo.tra;
 
   @override
   Widget body(BuildContext context) {
@@ -23,7 +24,7 @@ class InfoCard extends EditedCard {
               Container(
                 width: 120,
                 child: Text(
-                  'Saving Time',
+                  LocaleKeys.savingTime.tra,
                   style: textTheme.bodyText2,
                 ),
               ),
@@ -42,7 +43,7 @@ class InfoCard extends EditedCard {
               Container(
                 width: 120,
                 child: Text(
-                  'Nutrition Facts',
+                  LocaleKeys.nutritionFacts.tra,
                   style: textTheme.bodyText2,
                 ),
               ),
@@ -67,7 +68,7 @@ class InfoCard extends EditedCard {
               Container(
                 width: 120,
                 child: Text(
-                  'Tags',
+                  LocaleKeys.tags.tra,
                   style: textTheme.bodyText2,
                 ),
               ),

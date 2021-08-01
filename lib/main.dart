@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-// flutter pub run easy_localization:generate -S assets/translations -f keys -O lib/core/localization -o locale_keys.g.dart
-// flutter pub run easy_localization:generate -S assets/translations -s pt-BR.json -O lib/core/localization -o loader.g.dart -f json
+// flutter pub run easy_localization:generate -S assets/translations -f keys -O lib/localization -o locale_keys.g.dart
+// flutter pub run easy_localization:generate -S assets/translations -s en-US.json -O lib/localization -o loader.g.dart -f json
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

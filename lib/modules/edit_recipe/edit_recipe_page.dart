@@ -69,7 +69,7 @@ class EditRecipePage extends GetView<EditRecipeController> {
                 SizedBox(height: 40),
                 ...cards,
                 SizedBox(height: 20),
-                Text('Save To'),
+                Text(LocaleKeys.saveTo.tra),
                 SizedBox(height: 15),
                 Row(
                   children: [
@@ -94,7 +94,7 @@ class EditRecipePage extends GetView<EditRecipeController> {
                           ),
                           child: Center(
                             child: Text(
-                              'Save Recipe',
+                              LocaleKeys.saveRecipe.tra,
                               style: TextStyle(
                                 color: Theme.of(context).primaryColor,
                                 fontSize: 16,
@@ -109,7 +109,7 @@ class EditRecipePage extends GetView<EditRecipeController> {
                 SizedBox(height: 40),
                 ElevatedButton(
                   onPressed: () {},
-                  child: Text('Post to Feed'),
+                  child: Text(LocaleKeys.postFeed.tra),
                 ),
                 SizedBox(height: 20),
                 Row(
@@ -118,7 +118,7 @@ class EditRecipePage extends GetView<EditRecipeController> {
                     Icon(BootstrapIcons.trash),
                     SizedBox(width: 10),
                     Text(
-                      'Remove from Cookbook',
+                      LocaleKeys.removeFromCookbook.tra,
                       style: textTheme.bodyText1,
                     )
                   ],

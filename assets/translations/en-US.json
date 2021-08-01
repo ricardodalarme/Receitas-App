@@ -24,5 +24,13 @@
     "editRecipe": "Edit Recipe",
     "recipeName": "Recipe Name",
     "gallery": "Gallery",
-    "howCook": "How to cook"
+    "howCook": "How to cook",
+    "saveTo": "Save To",
+    "saveRecipe": "Save Recipe",
+    "postFeed": "Post to Feed",
+    "removeFromCookbook": "Remove from Cookbook",
+    "savingTime": "Saving Time",
+    "nutritionFacts": "Nutrition Facts",
+    "tags": "Tags",
+    "additionalInfo": "Additional Info"
 }

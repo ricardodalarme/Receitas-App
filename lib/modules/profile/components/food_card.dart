@@ -25,7 +25,6 @@ class FoodCard extends StatelessWidget {
               color: Colors.grey.withOpacity(0.15),
               spreadRadius: 5,
               blurRadius: 6,
-              offset: Offset(0, 0), // changes position of shadow
             ),
           ],
         ),

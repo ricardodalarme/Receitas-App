@@ -1,6 +1,7 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:desafio/data/models/recipe_model.dart';
+import 'package:desafio/localization/locale_extension.dart';
 import 'package:desafio/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -69,7 +70,8 @@ class RecipeCard extends StatelessWidget {
                             '+- ${recipe.servingTime} min',
                           ),
                           SizedBox(width: 15),
-                          Text('${recipe.ingredientsId.length} ingredients'),
+                          Text(
+                              '${recipe.ingredientsId.length} ${LocaleKeys.ingredients.tra.toLowerCase()}'),
                         ],
                       ),
                       Container(
@@ -91,7 +93,7 @@ class RecipeCard extends StatelessWidget {
                             ),
                             SizedBox(width: 5),
                             Text(
-                              'Cook',
+                              LocaleKeys.cook,
                               style: textTheme.caption!
                                   .copyWith(color: theme.primaryColor),
                             ),
