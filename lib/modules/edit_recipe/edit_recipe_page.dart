@@ -21,107 +21,110 @@ class EditRecipePage extends GetView<EditRecipeController> {
 
     return Scaffold(
       body: SingleChildScrollView(
-        child: Padding(
-            padding: EdgeInsets.all(25),
-            child: Obx(
-              () {
-                final recipe = controller.recipe.value!;
+        physics: BouncingScrollPhysics(),
+        padding: const EdgeInsets.all(25),
+        child: Obx(
+          () {
+            final recipe = controller.recipe.value;
 
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+            if (recipe == null) {
+              return CircularProgressIndicator();
+            }
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                BackLabelButton(text: LocaleKeys.backRecipes.tra),
+                SizedBox(height: 20),
+                Text(
+                  LocaleKeys.editRecipe.tra,
+                  style: textTheme.headline2,
+                ),
+                SizedBox(height: 40),
+                Row(
                   children: [
-                    BackLabelButton(text: LocaleKeys.backRecipes.tra),
-                    SizedBox(height: 20),
-                    Text(
-                      LocaleKeys.editRecipe.tra,
-                      style: textTheme.headline2,
+                    ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: CachedNetworkImage(
+                          imageUrl: recipe.coverPhoto,
+                          height: 80,
+                          width: 80,
+                          fit: BoxFit.cover,
+                        )),
+                    SizedBox(width: 20),
+                    Expanded(
+                      child: TextInputField(
+                        hintText: LocaleKeys.recipeName.tra,
+                      ),
                     ),
-                    SizedBox(height: 40),
-                    Row(
-                      children: [
-                        ClipRRect(
+                  ],
+                ),
+                SizedBox(height: 40),
+                GalleryCard(),
+                SizedBox(height: 20),
+                IngredientsCard(),
+                SizedBox(height: 20),
+                HowToCookCard(),
+                SizedBox(height: 20),
+                InfoCard(),
+                SizedBox(height: 40),
+                Text('Save To'),
+                SizedBox(height: 15),
+                Row(
+                  children: [
+                    Expanded(
+                      flex: 3,
+                      child: DropDownButton(text: 'Western (5)'),
+                    ),
+                    SizedBox(width: 15),
+                    Expanded(
+                      flex: 2,
+                      child: InkWell(
+                        onTap: () => {},
+                        child: Container(
+                          height: 60,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                              color: Theme.of(context).primaryColor,
+                              width: 2,
+                            ),
                             borderRadius: BorderRadius.circular(10),
-                            child: CachedNetworkImage(
-                              imageUrl: recipe.coverPhoto,
-                              height: 80,
-                              width: 80,
-                              fit: BoxFit.cover,
-                            )),
-                        SizedBox(width: 20),
-                        Expanded(
-                          child: TextInputField(
-                            hintText: LocaleKeys.recipeName.tra,
                           ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 40),
-                    GalleryCard(),
-                    SizedBox(height: 20),
-                    IngredientsCard(),
-                    SizedBox(height: 20),
-                    HowToCookCard(),
-                    SizedBox(height: 20),
-                    InfoCard(),
-                    SizedBox(height: 40),
-                    Text('Save To'),
-                    SizedBox(height: 15),
-                    Row(
-                      children: [
-                        Expanded(
-                          flex: 3,
-                          child: DropDownButton(text: 'Western (5)'),
-                        ),
-                        SizedBox(width: 15),
-                        Expanded(
-                          flex: 2,
-                          child: InkWell(
-                            onTap: () => {},
-                            child: Container(
-                              height: 60,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border.all(
-                                  color: Theme.of(context).primaryColor,
-                                  width: 2,
-                                ),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  'Save Recipe',
-                                  style: TextStyle(
-                                    color: Theme.of(context).primaryColor,
-                                    fontSize: 16,
-                                  ),
-                                ),
+                          child: Center(
+                            child: Text(
+                              'Save Recipe',
+                              style: TextStyle(
+                                color: Theme.of(context).primaryColor,
+                                fontSize: 16,
                               ),
                             ),
                           ),
                         ),
-                      ],
+                      ),
                     ),
-                    SizedBox(height: 40),
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: Text('Post to Feed'),
-                    ),
-                    SizedBox(height: 20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(BootstrapIcons.trash),
-                        SizedBox(width: 10),
-                        Text(
-                          'Remove from Cookbook',
-                          style: textTheme.bodyText1,
-                        )
-                      ],
+                  ],
+                ),
+                SizedBox(height: 40),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Text('Post to Feed'),
+                ),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(BootstrapIcons.trash),
+                    SizedBox(width: 10),
+                    Text(
+                      'Remove from Cookbook',
+                      style: textTheme.bodyText1,
                     )
                   ],
-                );
-              },
-            )),
+                )
+              ],
+            );
+          },
+        ),
       ),
     );
   }

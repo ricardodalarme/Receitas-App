@@ -1,4 +1,5 @@
 import 'package:desafio/data/models/category_model.dart';
+import 'package:desafio/data/models/profile_model.dart';
 import 'package:desafio/data/repositories/profile_repository.dart';
 import 'package:get/get.dart';
 
@@ -7,11 +8,13 @@ class ProfileController extends GetxController {
 
   ProfileController(this._httpRepository);
 
-  var categories = <Category>[].obs;
+  final categories = <Category>[].obs;
+  final profile = Rx<Profile?>(null);
 
   @override
   void onInit() {
     super.onInit();
+    profile.value = Get.arguments;
     getCategories();
   }
 

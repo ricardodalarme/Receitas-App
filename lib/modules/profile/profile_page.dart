@@ -1,6 +1,5 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:desafio/data/models/profile_model.dart';
 import 'package:desafio/localization/locale_extension.dart';
 import 'package:desafio/modules/profile/components/categories.dart';
 import 'package:desafio/modules/profile/components/food_card.dart';
@@ -10,8 +9,6 @@ import 'package:get/get.dart';
 
 class ProfilePage extends GetView<ProfileController> {
   ProfilePage({Key? key}) : super(key: key);
-
-  Profile profile = Get.arguments;
 
   @override
   Widget build(BuildContext context) {
@@ -65,67 +62,72 @@ class ProfilePage extends GetView<ProfileController> {
               ],
             ),
             SizedBox(height: 40),
-            Row(
-              children: [
-                CircleAvatar(
-                  radius: 45,
-                  backgroundImage: CachedNetworkImageProvider(profile.photo),
-                ),
-                SizedBox(width: 20),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Obx(
+              () {
+                return Row(
+                  children: [
+                    CircleAvatar(
+                      radius: 45,
+                      backgroundImage: CachedNetworkImageProvider(
+                          controller.profile.value!.photo),
+                    ),
+                    SizedBox(width: 20),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            profile.name,
-                            style: textTheme.headline5,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                controller.profile.value!.name,
+                                style: textTheme.headline5,
+                              ),
+                              Icon(BootstrapIcons.pencil),
+                            ],
                           ),
-                          Icon(BootstrapIcons.pencil),
+                          SizedBox(height: 3),
+                          Text(
+                            controller.profile.value!.function,
+                            style: TextStyle(color: Colors.grey, fontSize: 18),
+                          ),
+                          SizedBox(height: 12),
+                          Row(
+                            children: [
+                              Text(
+                                '${controller.profile.value!.followers} ${LocaleKeys.followers.tra.toLowerCase()}',
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              SizedBox(width: 10),
+                              Container(
+                                height: 5,
+                                width: 5,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey,
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                              SizedBox(width: 10),
+                              Text(
+                                '${controller.profile.value!.likes} ${LocaleKeys.likes.tra.toLowerCase()}',
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
                         ],
                       ),
-                      SizedBox(height: 3),
-                      Text(
-                        profile.function,
-                        style: TextStyle(color: Colors.grey, fontSize: 18),
-                      ),
-                      SizedBox(height: 12),
-                      Row(
-                        children: [
-                          Text(
-                            '${profile.followers} ${LocaleKeys.followers.tra.toLowerCase()}',
-                            style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          SizedBox(width: 10),
-                          Container(
-                            height: 5,
-                            width: 5,
-                            decoration: BoxDecoration(
-                              color: Colors.grey,
-                              shape: BoxShape.circle,
-                            ),
-                          ),
-                          SizedBox(width: 10),
-                          Text(
-                            '${profile.likes} ${LocaleKeys.likes.tra.toLowerCase()}',
-                            style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+                    ),
+                  ],
+                );
+              },
             ),
             SizedBox(height: 20),
             Divider(),
