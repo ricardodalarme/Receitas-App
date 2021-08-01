@@ -14,15 +14,18 @@ final pages = [
     name: Routes.profile,
     page: () => ProfilePage(),
     binding: ProfileBinding(),
+    transition: Transition.fadeIn,
   ),
   GetPage(
     name: Routes.recipes,
     page: () => RecipesPage(),
     binding: RecipesBinding(),
+    transition: Transition.leftToRightWithFade,
   ),
   GetPage(
     name: Routes.editRecipe,
     page: () => EditRecipePage(),
     binding: EditRecipeBinding(),
+    transition: Transition.leftToRightWithFade,
   ),
 ];

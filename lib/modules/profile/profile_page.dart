@@ -95,7 +95,7 @@ class ProfilePage extends GetView<ProfileController> {
                       Row(
                         children: [
                           Text(
-                            '584 ${LocaleKeys.followers.tra}',
+                            '584 ${LocaleKeys.followers.tra.toLowerCase()}',
                             style: TextStyle(
                               color: Colors.grey,
                               fontSize: 16,
@@ -113,7 +113,7 @@ class ProfilePage extends GetView<ProfileController> {
                           ),
                           SizedBox(width: 10),
                           Text(
-                            '23k ${LocaleKeys.likes.tra}',
+                            '23k ${LocaleKeys.likes.tra.toLowerCase()}',
                             style: TextStyle(
                               color: Colors.grey,
                               fontSize: 16,

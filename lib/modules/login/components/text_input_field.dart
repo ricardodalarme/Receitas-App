@@ -22,7 +22,7 @@ class TextInputField extends StatelessWidget {
             if (buttonText != null) Text(buttonText!),
           ],
         ),
-        TextField(),
+        TextField(obscureText: isPassword),
       ],
     );
   }

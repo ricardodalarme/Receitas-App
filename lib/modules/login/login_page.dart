@@ -53,6 +53,7 @@ class LoginPage extends StatelessWidget {
                   TextInputField(
                     hintText: LocaleKeys.password.tra,
                     isPassword: true,
+                  
                     buttonText: LocaleKeys.forgotPassowrd.tra,
                   ),
                   SizedBox(height: 30),
