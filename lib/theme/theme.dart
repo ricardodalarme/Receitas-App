@@ -26,6 +26,10 @@ ThemeData makeAppTheme() {
       fontSize: 14,
       color: secondaryTextColor,
     ),
+    button: TextStyle(
+      fontSize: 18,
+      color: textColor,
+    ),
   );
 
   final inputDecorationTheme = InputDecorationTheme(
