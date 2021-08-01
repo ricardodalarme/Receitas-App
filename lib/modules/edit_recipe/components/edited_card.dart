@@ -1,7 +1,9 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
+import 'package:desafio/modules/edit_recipe/edit_recipe_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class EditedCard extends StatelessWidget {
+class EditedCard extends GetWidget<EditRecipeController> {
   EditedCard({Key? key}) : super(key: key);
 
   String get title => '';

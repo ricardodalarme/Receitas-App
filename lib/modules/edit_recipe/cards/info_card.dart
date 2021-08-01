@@ -13,6 +13,8 @@ class InfoCard extends EditedCard {
     final textTheme = Theme.of(context).textTheme;
 
     return Obx(() {
+      final recipe = controller.recipe.value!;
+
       return Column(
         children: [
           Row(
@@ -27,7 +29,7 @@ class InfoCard extends EditedCard {
               ),
               Flexible(
                 child: Text(
-                  '12 Mins',
+                  '${recipe.servingTime} Mins',
                   style: textTheme.bodyText1,
                 ),
               ),
@@ -46,37 +48,15 @@ class InfoCard extends EditedCard {
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '222 calories',
-                    style: textTheme.bodyText1,
-                  ),
-                  SizedBox(height: 5),
-                  Text(
-                    '6.2 g fat',
-                    style: textTheme.bodyText1,
-                  ),
-                  SizedBox(height: 5),
-                  Text(
-                    '7.2 g carbohydrates',
-                    style: textTheme.bodyText1,
-                  ),
-                  SizedBox(height: 5),
-                  Text(
-                    '28.6 g protein',
-                    style: textTheme.bodyText1,
-                  ),
-                  SizedBox(height: 5),
-                  Text(
-                    '68 mg cholesterol',
-                    style: textTheme.bodyText1,
-                  ),
-                  SizedBox(height: 5),
-                  Text(
-                    '268 mg sodium',
-                    style: textTheme.bodyText1,
-                  ),
-                ],
+                children: recipe.nutritionFacts.map((fact) {
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 5),
+                    child: Text(
+                      fact,
+                      style: textTheme.bodyText1,
+                    ),
+                  );
+                }).toList(),
               ),
             ],
           ),
