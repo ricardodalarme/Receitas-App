@@ -12,12 +12,12 @@ class ProfileController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    findUsers();
+    getCategories();
   }
 
-  Future<void> findUsers() async {
+  Future<void> getCategories() async {
     try {
-      categories.value = await _httpRepository.findAllCategories();
+      categories.value = await _httpRepository.getAllCategories();
     } catch (e) {
       print(e);
     }

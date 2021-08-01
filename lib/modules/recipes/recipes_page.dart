@@ -1,8 +1,11 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:desafio/localization/locale_extension.dart';
+import 'package:desafio/modules/recipes/components/recipe_card.dart';
+import 'package:desafio/modules/recipes/recipes_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class RecipesPage extends StatelessWidget {
+class RecipesPage extends GetView<RecipesController> {
   RecipesPage({Key? key}) : super(key: key);
 
   @override
@@ -40,7 +43,7 @@ class RecipesPage extends StatelessWidget {
                           color: Colors.grey.withOpacity(0.1),
                           spreadRadius: 5,
                           blurRadius: 6,
-                          offset: Offset(0, 3), // changes position of shadow
+                          offset: Offset(0, 3), 
                         ),
                       ],
                     ),
@@ -62,13 +65,15 @@ class RecipesPage extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: ListView.builder(
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return Container();
-                //return RecipeCard(recipes[index]);
-              },
-            ),
+            child: Obx(() {
+              final recipes = controller.categories;
+              return ListView.builder(
+                itemCount: recipes.length,
+                itemBuilder: (context, index) {
+                  return RecipeCard(recipes[index]);
+                },
+              );
+            }),
           ),
         ],
       ),
