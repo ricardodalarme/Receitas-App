@@ -1,4 +1,5 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:desafio/data/models/recipe_model.dart';
 import 'package:desafio/routes/routes.dart';
 import 'package:flutter/material.dart';
@@ -45,8 +46,8 @@ class RecipeCard extends StatelessWidget {
                   topLeft: Radius.circular(10),
                   topRight: Radius.circular(10),
                 ),
-                child: Image.network(
-                  recipe.coverPhoto!,
+                child: CachedNetworkImage(
+                  imageUrl: recipe.coverPhoto!,
                   height: 150,
                   fit: BoxFit.cover,
                 )),

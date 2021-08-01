@@ -18,10 +18,19 @@ class LoginPage extends StatelessWidget {
           children: [
             Stack(
               children: [
-                Container(height: 285, color: Colors.yellow),
+                ClipRRect(
+                    borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(120),
+                    ),
+                    child: Image.asset(
+                      'assets/images/welcome.jpg',
+                      height: 315,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    )),
                 Positioned(
                   left: 25,
-                  top: 133,
+                  top: 100,
                   child: Text(
                     LocaleKeys.welcomeBack.tra,
                     style: textTheme.headline2,

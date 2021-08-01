@@ -7,6 +7,7 @@ import 'package:desafio/modules/edit_recipe/edit_recipe_controller.dart';
 import 'package:desafio/widgets/back_label_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class EditRecipePage extends GetView<EditRecipeController> {
   const EditRecipePage({Key? key}) : super(key: key);
@@ -37,8 +38,8 @@ class EditRecipePage extends GetView<EditRecipeController> {
                       children: [
                         ClipRRect(
                             borderRadius: BorderRadius.circular(10),
-                            child: Image.network(
-                              recipe.coverPhoto!,
+                            child: CachedNetworkImage(
+                              imageUrl: recipe.coverPhoto!,
                               height: 80,
                               width: 80,
                               fit: BoxFit.cover,

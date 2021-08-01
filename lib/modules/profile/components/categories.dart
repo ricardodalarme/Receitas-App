@@ -31,7 +31,7 @@ class Categories extends StatelessWidget {
             fontSize: 18,
           ),
         ),
-        SizedBox(height: 20),
+        SizedBox(height: 10),
         Visibility(
           visible: isCurrent,
           child: Container(

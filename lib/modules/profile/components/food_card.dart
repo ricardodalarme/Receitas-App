@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:desafio/data/models/category_model.dart';
 import 'package:desafio/routes/routes.dart';
 import 'package:flutter/material.dart';
@@ -35,9 +36,9 @@ class FoodCard extends StatelessWidget {
                   topLeft: Radius.circular(10),
                   topRight: Radius.circular(10),
                 ),
-                child: Image.network(
-                  category.photo,
-                  height: 100,
+                child: CachedNetworkImage(
+                  imageUrl: category.photo,
+                  height: 120,
                   width: double.infinity,
                   fit: BoxFit.cover,
                 )),

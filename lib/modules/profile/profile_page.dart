@@ -37,7 +37,8 @@ class ProfilePage extends GetView<ProfileController> {
         ),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.fromLTRB(20, 50, 20, 10),
+        physics: BouncingScrollPhysics(),
+        padding: const EdgeInsets.all(25),
         child: Column(
           children: [
             Row(
@@ -49,7 +50,7 @@ class ProfilePage extends GetView<ProfileController> {
                 ),
                 Row(
                   children: [
-                    Icon(Icons.settings),
+                    Icon(BootstrapIcons.gear),
                     SizedBox(width: 10),
                     Text(
                       LocaleKeys.settings.tra,
@@ -59,12 +60,12 @@ class ProfilePage extends GetView<ProfileController> {
                 ),
               ],
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 40),
             Row(
               children: [
                 Container(
-                  height: 120,
-                  width: 120,
+                  height: 100,
+                  width: 100,
                   decoration: BoxDecoration(
                     color: Colors.grey,
                     shape: BoxShape.circle,
@@ -82,7 +83,7 @@ class ProfilePage extends GetView<ProfileController> {
                             'Nick Evans',
                             style: textTheme.headline5,
                           ),
-                          Icon(Icons.edit),
+                          Icon(BootstrapIcons.pencil),
                         ],
                       ),
                       SizedBox(height: 3),
@@ -126,9 +127,9 @@ class ProfilePage extends GetView<ProfileController> {
                 ),
               ],
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 20),
             Divider(),
-            SizedBox(height: 30),
+            SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -152,7 +153,7 @@ class ProfilePage extends GetView<ProfileController> {
                 },
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  childAspectRatio: 1.5,
+                  childAspectRatio: 1.25,
                   crossAxisSpacing: 20,
                   mainAxisSpacing: 20,
                 ),
