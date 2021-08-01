@@ -8,9 +8,9 @@ class RecipesController extends GetxController {
 
   RecipesController(this._httpRepository);
 
-  var categories = <Recipe>[].obs;
-
-  var recipe = Rx<Category?>(null);
+  final recipes = <Recipe>[].obs;
+  final categories = <Category>[].obs;
+  final category = Rx<Category?>(null);
 
   @override
   void onInit() {
@@ -22,7 +22,10 @@ class RecipesController extends GetxController {
     final categoryId = int.parse(Get.parameters['id']!);
 
     try {
-      categories.value = await _httpRepository.getAllRecipes(categoryId);
+      recipes.value = await _httpRepository.getAllRecipes(categoryId);
+      categories.value = await _httpRepository.getAllCategories();
+      category.value =
+          categories.firstWhere((element) => element.id == categoryId);
     } catch (e) {
       print(e);
     }

@@ -35,11 +35,16 @@ class RecipesPage extends GetView<RecipesController> {
               ],
             ),
             SizedBox(height: 40),
-            Obx(() => DropDownButton(
-                text: 'Wstern (${controller.categories.length})')),
+            Obx(() {
+              if (controller.category.value != null)
+                return DropDownButton(
+                    text:
+                        '${controller.category.value!.name} (${controller.recipes.length})');
+              return Container();
+            }),
             SizedBox(height: 30),
             Obx(() {
-              final recipes = controller.categories;
+              final recipes = controller.recipes;
               return ListView.builder(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
