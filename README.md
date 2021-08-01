@@ -15,10 +15,10 @@ A estrutura do projeto segue um padrão semelhante ao proposto pelo [@kauemuraka
 ## Screenshots
 
 <p float="left">
-  <img src="/screenshots/login.png" width="230" />
-  <img src="/screenshots/profile.png" width="230" />
-  <img src="/screenshots/recipes.png" width="230" />
-  <img src="/screenshots/edit_recipe.png" width="230" />
+  <img src="/screenshots/login.png" width="200" />
+  <img src="/screenshots/profile.png" width="200" />
+  <img src="/screenshots/recipes.png" width="200" />
+  <img src="/screenshots/edit_recipe.png" width="200" />
 </p>
 
 ## Fluxo
