@@ -1,6 +1,6 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
-import 'package:desafio/routes/routes.dart';
 import 'package:desafio/data/models/recipe_model.dart';
+import 'package:desafio/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,7 +21,9 @@ class RecipeCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 25),
       child: InkWell(
         onTap: () {
-          Get.toNamed(Routes.editRecipe);
+          final b = Routes.editRecipe.replaceFirst(':id', recipe.id.toString());
+
+          Get.toNamed(b);
         },
         child: Container(
           margin: EdgeInsets.only(bottom: 20),

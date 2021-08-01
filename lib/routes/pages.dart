@@ -1,3 +1,4 @@
+import 'package:desafio/modules/edit_recipe/edit_recipe_binding.dart';
 import 'package:desafio/modules/edit_recipe/edit_recipe_page.dart';
 import 'package:desafio/modules/login/login_page.dart';
 import 'package:desafio/modules/profile/profile_binding.dart';
@@ -19,5 +20,9 @@ final pages = [
     page: () => RecipesPage(),
     binding: RecipesBinding(),
   ),
-  GetPage(name: Routes.editRecipe, page: () => EditRecipePage()),
+  GetPage(
+    name: Routes.editRecipe,
+    page: () => EditRecipePage(),
+    binding: EditRecipeBinding(),
+  ),
 ];
