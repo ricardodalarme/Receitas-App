@@ -46,7 +46,7 @@ class RecipeCard extends StatelessWidget {
                     topRight: Radius.circular(10),
                   ),
                   child: Image.network(
-                    recipe.imageUrl,
+                    recipe.coverPhoto,
                     height: 150,
                     fit: BoxFit.cover,
                   )),
@@ -66,10 +66,10 @@ class RecipeCard extends StatelessWidget {
                         Row(
                           children: [
                             Text(
-                              '+- ${recipe.time.toString()}',
+                              '+- ${recipe.servingTime} min',
                             ),
                             SizedBox(width: 15),
-                            Text('${recipe.ingredients} ingredients'),
+                            Text('${recipe.ingredientsId.length} ingredients'),
                           ],
                         ),
                         Container(

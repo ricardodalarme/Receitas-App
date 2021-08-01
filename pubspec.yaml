@@ -12,12 +12,14 @@ dependencies:
   get: ^4.3.4
   flutter_facebook_auth: ^3.5.0
   http: ^0.13.3
+  json_serializable: 
   
   flutter:
     sdk: flutter
 
 dev_dependencies:
   pedantic: ^1.11.1
+  build_runner: ^2.0.6
 
   flutter_test:
     sdk: flutter
