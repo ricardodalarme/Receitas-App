@@ -146,7 +146,7 @@ class ProfilePage extends GetView<ProfileController> {
               ),
               SizedBox(height: 30),
               Obx(() {
-                final categories = controller.categories.value;
+                final categories = controller.categories;
 
                 return GridView.builder(
                   shrinkWrap: true,
