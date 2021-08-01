@@ -1,4 +1,4 @@
-import 'package:desafio/core/localization/locale_extension.dart';
+import 'package:desafio/localization/locale_extension.dart';
 import 'package:flutter/material.dart';
 
 class FacebookButton extends StatelessWidget {

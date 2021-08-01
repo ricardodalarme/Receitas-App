@@ -1,10 +1,7 @@
-import 'package:desafio/core/config/routes.dart';
-import 'package:desafio/core/localization/loader.g.dart';
-import 'package:desafio/ui/screens/edit_recipe/edit_recipe_screen.dart';
-import 'package:desafio/ui/screens/login/login_screen.dart';
-import 'package:desafio/ui/screens/profile/profile_screen.dart';
-import 'package:desafio/ui/screens/recipes/recipes_screen.dart';
-import 'package:desafio/ui/theme.dart';
+import 'package:desafio/localization/loader.g.dart';
+import 'package:desafio/routes/pages.dart';
+import 'package:desafio/routes/routes.dart';
+import 'package:desafio/theme/theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -49,12 +46,7 @@ class MyApp extends StatelessWidget {
       theme: makeAppTheme(),
       locale: context.locale,
       initialRoute: Routes.login,
-      getPages: [
-        GetPage(name: Routes.login, page: () => LoginScreen()),
-        GetPage(name: Routes.profile, page: () => ProfileScreen()),
-        GetPage(name: Routes.recipes, page: () => RecipesScreen()),
-        GetPage(name: Routes.editRecipe, page: () => EditRecipeScreen()),
-      ],
+      getPages: pages,
     );
   }
 }

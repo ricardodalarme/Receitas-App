@@ -1,6 +1,6 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
-import 'package:desafio/core/config/routes.dart';
-import 'package:desafio/core/models/recipe_model.dart';
+import 'package:desafio/routes/routes.dart';
+import 'package:desafio/data/models/recipe_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,12 +1,12 @@
-import 'package:desafio/core/localization/locale_extension.dart';
-import 'package:desafio/ui/screens/edit_recipe/components/card_title.dart';
-import 'package:desafio/ui/screens/edit_recipe/components/gallery_photo.dart';
-import 'package:desafio/ui/screens/edit_recipe/components/ingredient_photo.dart';
-import 'package:desafio/ui/screens/edit_recipe/components/topics.dart';
+import 'package:desafio/localization/locale_extension.dart';
+import 'package:desafio/modules/edit_recipe/components/card_title.dart';
+import 'package:desafio/modules/edit_recipe/components/gallery_photo.dart';
+import 'package:desafio/modules/edit_recipe/components/ingredient_photo.dart';
+import 'package:desafio/modules/edit_recipe/components/topics.dart';
 import 'package:flutter/material.dart';
 
-class EditRecipeScreen extends StatelessWidget {
-  const EditRecipeScreen({Key? key}) : super(key: key);
+class EditRecipePage extends StatelessWidget {
+  const EditRecipePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

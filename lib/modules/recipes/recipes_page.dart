@@ -1,9 +1,9 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
-import 'package:desafio/core/localization/locale_extension.dart';
+import 'package:desafio/localization/locale_extension.dart';
 import 'package:flutter/material.dart';
 
-class RecipesScreen extends StatelessWidget {
-  RecipesScreen({Key? key}) : super(key: key);
+class RecipesPage extends StatelessWidget {
+  RecipesPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

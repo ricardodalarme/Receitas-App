@@ -1,12 +1,12 @@
-import 'package:desafio/core/config/routes.dart';
-import 'package:desafio/core/localization/locale_extension.dart';
-import 'package:desafio/ui/screens/login/components/facebook_button.dart';
-import 'package:desafio/ui/screens/login/components/text_input_field.dart';
+import 'package:desafio/localization/locale_extension.dart';
+import 'package:desafio/modules/login/components/facebook_button.dart';
+import 'package:desafio/modules/login/components/text_input_field.dart';
+import 'package:desafio/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class LoginPage extends StatelessWidget {
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

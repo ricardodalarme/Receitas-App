@@ -1,9 +1,12 @@
-import 'package:desafio/core/config/routes.dart';
+import 'package:desafio/data/models/category_model.dart';
+import 'package:desafio/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class FoodCard extends StatelessWidget {
-  const FoodCard({Key? key}) : super(key: key);
+  final Category category;
+
+  const FoodCard(this.category, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +36,10 @@ class FoodCard extends StatelessWidget {
               SizedBox(height: 10),
               Center(
                 child: Text(
-                  'Some food',
+                  category.name,
                   style: textTheme.headline5,
                 ),
               ),
-              SizedBox(height: 15),
             ],
           ),
         ),

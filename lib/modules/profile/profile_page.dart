@@ -1,10 +1,12 @@
-import 'package:desafio/core/localization/locale_extension.dart';
-import 'package:desafio/ui/screens/profile/components/categories.dart';
-import 'package:desafio/ui/screens/profile/components/food_card.dart';
+import 'package:desafio/localization/locale_extension.dart';
+import 'package:desafio/modules/profile/components/categories.dart';
+import 'package:desafio/modules/profile/components/food_card.dart';
+import 'package:desafio/modules/profile/profile_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+class ProfilePage extends GetView<ProfileController> {
+  const ProfilePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -143,17 +145,21 @@ class ProfileScreen extends StatelessWidget {
                 color: Colors.grey,
               ),
               SizedBox(height: 30),
-              GridView.count(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                crossAxisCount: 2,
-                padding: EdgeInsets.all(0),
-                children: List.generate(8, (index) {
-                  return Center(
-                    child: FoodCard(),
-                  );
-                }),
-              ),
+              Obx(() {
+                final categories = controller.categories.value;
+
+                return GridView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  padding: EdgeInsets.all(0),
+                  itemCount: categories.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return FoodCard(categories[index]);
+                  },
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2),
+                );
+              })
             ],
           ),
         ),
