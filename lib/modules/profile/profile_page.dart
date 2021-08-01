@@ -64,83 +64,93 @@ class ProfilePage extends GetView<ProfileController> {
             SizedBox(height: 40),
             Obx(
               () {
-                return Row(
+                final profile = controller.profile.value!;
+
+                return Column(
                   children: [
-                    CircleAvatar(
-                      radius: 45,
-                      backgroundImage: CachedNetworkImageProvider(
-                          controller.profile.value!.photo),
-                    ),
-                    SizedBox(width: 20),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 45,
+                          backgroundImage: CachedNetworkImageProvider(
+                              profile.photo),
+                        ),
+                        SizedBox(width: 20),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                controller.profile.value!.name,
-                                style: textTheme.headline5,
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    profile.name,
+                                    style: textTheme.headline5,
+                                  ),
+                                  Icon(BootstrapIcons.pencil),
+                                ],
                               ),
-                              Icon(BootstrapIcons.pencil),
+                              SizedBox(height: 3),
+                              Text(
+                                profile.function,
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 18),
+                              ),
+                              SizedBox(height: 12),
+                              Row(
+                                children: [
+                                  Text(
+                                    '${profile.followers} ${LocaleKeys.followers.tra.toLowerCase()}',
+                                    style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  SizedBox(width: 10),
+                                  Container(
+                                    height: 5,
+                                    width: 5,
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey,
+                                      shape: BoxShape.circle,
+                                    ),
+                                  ),
+                                  SizedBox(width: 10),
+                                  Text(
+                                    '${profile.likes} ${LocaleKeys.likes.tra.toLowerCase()}',
+                                    style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ],
                           ),
-                          SizedBox(height: 3),
-                          Text(
-                            controller.profile.value!.function,
-                            style: TextStyle(color: Colors.grey, fontSize: 18),
-                          ),
-                          SizedBox(height: 12),
-                          Row(
-                            children: [
-                              Text(
-                                '${controller.profile.value!.followers} ${LocaleKeys.followers.tra.toLowerCase()}',
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              SizedBox(width: 10),
-                              Container(
-                                height: 5,
-                                width: 5,
-                                decoration: BoxDecoration(
-                                  color: Colors.grey,
-                                  shape: BoxShape.circle,
-                                ),
-                              ),
-                              SizedBox(width: 10),
-                              Text(
-                                '${controller.profile.value!.likes} ${LocaleKeys.likes.tra.toLowerCase()}',
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
+                    SizedBox(height: 20),
+                    Divider(),
+                    SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Categories(20, LocaleKeys.recipes.tra, true),
+                        Categories(profile.saved,
+                            LocaleKeys.saved.tra, false),
+                        Categories(profile.following,
+                            LocaleKeys.following.tra, false),
+                      ],
+                    ),
+                    Divider(),
                   ],
                 );
               },
             ),
-            SizedBox(height: 20),
-            Divider(),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Categories(20, LocaleKeys.recipes.tra, true),
-                Categories(75, LocaleKeys.saved.tra, false),
-                Categories(248, LocaleKeys.following.tra, false),
-              ],
-            ),
-            Divider(),
             SizedBox(height: 30),
             Obx(() {
               final categories = controller.categories;

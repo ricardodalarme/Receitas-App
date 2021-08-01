@@ -15,6 +15,8 @@ Profile _$ProfileFromJson(Map<String, dynamic> json) {
     function: json['function'] as String,
     likes: json['likes'] as int,
     followers: json['followers'] as int,
+    saved: json['saved'] as int,
+    following: json['following'] as int,
   );
 }
 
@@ -26,4 +28,6 @@ Map<String, dynamic> _$ProfileToJson(Profile instance) => <String, dynamic>{
       'function': instance.function,
       'likes': instance.likes,
       'followers': instance.followers,
+      'saved': instance.saved,
+      'following': instance.following,
     };

@@ -13,6 +13,8 @@ class Profile {
   final String function;
   final int likes;
   final int followers;
+  final int saved;
+  final int following;
 
   Profile({
     required this.id,
@@ -22,6 +24,8 @@ class Profile {
     required this.function,
     required this.likes,
     required this.followers,
+    required this.saved,
+    required this.following,
   });
 
   factory Profile.fromFacebook(Map<String, dynamic> json) {
@@ -35,6 +39,8 @@ class Profile {
       function: 'Potato Master',
       likes: rng.nextInt(100),
       followers: rng.nextInt(100),
+      saved: rng.nextInt(100),
+      following: rng.nextInt(100),
     );
   }
 
