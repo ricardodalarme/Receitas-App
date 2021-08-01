@@ -25,7 +25,7 @@ class EditRecipePage extends GetView<EditRecipeController> {
             padding: EdgeInsets.all(25),
             child: Obx(
               () {
-                final recipe = controller.recipe.value;
+                final recipe = controller.recipe.value!;
 
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,7 +42,7 @@ class EditRecipePage extends GetView<EditRecipeController> {
                         ClipRRect(
                             borderRadius: BorderRadius.circular(10),
                             child: CachedNetworkImage(
-                              imageUrl: recipe.coverPhoto!,
+                              imageUrl: recipe.coverPhoto,
                               height: 80,
                               width: 80,
                               fit: BoxFit.cover,

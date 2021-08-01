@@ -7,7 +7,7 @@ class EditRecipeController extends GetxController {
 
   EditRecipeController(this._httpRepository);
 
-  var recipe = Recipe().obs;
+  var recipe = Rx<Recipe?>(null);
 
   @override
   void onInit() {
