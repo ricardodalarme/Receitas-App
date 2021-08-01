@@ -1,13 +1,14 @@
+import 'package:bootstrap_icons/bootstrap_icons.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:desafio/localization/locale_extension.dart';
-import 'package:desafio/modules/edit_recipe/components/card_title.dart';
-import 'package:desafio/modules/edit_recipe/components/gallery_photo.dart';
-import 'package:desafio/modules/edit_recipe/components/ingredient_photo.dart';
-import 'package:desafio/modules/edit_recipe/components/topics.dart';
+import 'package:desafio/modules/edit_recipe/cards/gallery_card.dart';
+import 'package:desafio/modules/edit_recipe/cards/how_to_cook_card.dart';
+import 'package:desafio/modules/edit_recipe/cards/info_card.dart';
+import 'package:desafio/modules/edit_recipe/cards/ingredients_card.dart';
 import 'package:desafio/modules/edit_recipe/edit_recipe_controller.dart';
 import 'package:desafio/widgets/back_label_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 
 class EditRecipePage extends GetView<EditRecipeController> {
   const EditRecipePage({Key? key}) : super(key: key);
@@ -19,7 +20,7 @@ class EditRecipePage extends GetView<EditRecipeController> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+            padding: EdgeInsets.all(25),
             child: Obx(
               () {
                 final recipe = controller.recipe.value;
@@ -78,183 +79,13 @@ class EditRecipePage extends GetView<EditRecipeController> {
                       ],
                     ),
                     SizedBox(height: 40),
-                    Card(
-                      color: Colors.white,
-                      child: Padding(
-                        padding: const EdgeInsets.all(15),
-                        child: Column(
-                          children: [
-                            CardTitle(textTheme, LocaleKeys.gallery.tra),
-                            SizedBox(height: 20),
-                            Container(
-                              height: 120,
-                              color: Colors.grey,
-                            ),
-                            SizedBox(height: 20),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                GalleryPhoto(),
-                                SizedBox(width: 10),
-                                GalleryPhoto(),
-                                SizedBox(width: 10),
-                                GalleryPhoto(),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                    GalleryCard(),
                     SizedBox(height: 20),
-                    Card(
-                      color: Colors.white,
-                      child: Padding(
-                        padding: const EdgeInsets.all(15),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            CardTitle(textTheme, LocaleKeys.ingredients.tra),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                IngredientPhoto(),
-                                SizedBox(width: 10),
-                                IngredientPhoto(),
-                                SizedBox(width: 10),
-                                IngredientPhoto(),
-                                SizedBox(width: 10),
-                                IngredientPhoto(),
-                                SizedBox(width: 10),
-                                IngredientPhoto(),
-                              ],
-                            ),
-                            Text(
-                              'Lemonade, coconut, peppers, egg + 5 more',
-                              style: textTheme.bodyText1,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                    IngredientsCard(),
                     SizedBox(height: 20),
-                    Card(
-                      color: Colors.white,
-                      child: Padding(
-                        padding: const EdgeInsets.all(15),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            CardTitle(textTheme, LocaleKeys.howCook.tra),
-                            SizedBox(height: 20),
-                            Topics(textTheme, 1, 'Heat a Belgian waffle iron'),
-                            SizedBox(height: 20),
-                            Topics(textTheme, 2,
-                                'Mix the flour, sugar, and baking powder together in a mixing bowl. Stir in 1 cup eggnog, butter, and the egg until well blended. Add more eggnog if needed to make a pourable batter.'),
-                            SizedBox(height: 20),
-                            Topics(textTheme, 3,
-                                'Lightly grease or spray the waffle iron with non-stick cooking spray. Pour some batter onto the preheated waffle iron,\n\n...'),
-                          ],
-                        ),
-                      ),
-                    ),
+                    HowToCookCard(),
                     SizedBox(height: 20),
-                    Card(
-                      color: Colors.white,
-                      child: Padding(
-                        padding: const EdgeInsets.all(15),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            CardTitle(textTheme, 'Additional Info'),
-                            SizedBox(height: 40),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  width: 120,
-                                  child: Text(
-                                    'Saving Time',
-                                    style: textTheme.bodyText2,
-                                  ),
-                                ),
-                                Flexible(
-                                  child: Text(
-                                    '12 Mins',
-                                    style: textTheme.bodyText1,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 40),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  width: 120,
-                                  child: Text(
-                                    'Nutrition Facts',
-                                    style: textTheme.bodyText2,
-                                  ),
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      '222 calories',
-                                      style: textTheme.bodyText1,
-                                    ),
-                                    SizedBox(height: 5),
-                                    Text(
-                                      '6.2 g fat',
-                                      style: textTheme.bodyText1,
-                                    ),
-                                    SizedBox(height: 5),
-                                    Text(
-                                      '7.2 g carbohydrates',
-                                      style: textTheme.bodyText1,
-                                    ),
-                                    SizedBox(height: 5),
-                                    Text(
-                                      '28.6 g protein',
-                                      style: textTheme.bodyText1,
-                                    ),
-                                    SizedBox(height: 5),
-                                    Text(
-                                      '68 mg cholesterol',
-                                      style: textTheme.bodyText1,
-                                    ),
-                                    SizedBox(height: 5),
-                                    Text(
-                                      '268 mg sodium',
-                                      style: textTheme.bodyText1,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 20),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  width: 120,
-                                  child: Text(
-                                    'Tags',
-                                    style: textTheme.bodyText2,
-                                  ),
-                                ),
-                                Flexible(
-                                  child: Text(
-                                    'Sweet, Coconut, Quick, Easy, Homemade',
-                                    style: textTheme.bodyText1,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                    InfoCard(),
                     SizedBox(height: 40),
                     Text('Save To'),
                     SizedBox(height: 15),
@@ -270,7 +101,7 @@ class EditRecipePage extends GetView<EditRecipeController> {
                                 color: Colors.white,
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
+                                    color: Colors.grey.withOpacity(0.15),
                                     spreadRadius: 3,
                                     blurRadius: 3,
                                   ),
@@ -332,7 +163,7 @@ class EditRecipePage extends GetView<EditRecipeController> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.ac_unit),
+                        Icon(BootstrapIcons.trash),
                         SizedBox(width: 10),
                         Text(
                           'Remove from Cookbook',

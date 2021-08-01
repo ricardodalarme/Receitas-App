@@ -16,7 +16,7 @@ ThemeData makeAppTheme() {
     headline5: TextStyle(
       fontSize: 20,
       color: textColor,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w500,
     ),
     headline6: TextStyle(
       fontSize: 16,
