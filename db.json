@@ -1,0 +1,61 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Pavê",
+      "categoryId": 1,
+      "coverPhoto": "",
+      "galleryPhotos": [
+        "",
+        ""
+      ],
+      "ingredientsId": [
+        1,
+        2
+      ],
+      "howToCook": [
+        "text",
+        "text"
+      ],
+      "servingTime": 12112,
+      "nutritionFacts": [
+        "6.2g fat",
+        "222 calories"
+      ],
+      "tags": [
+        "Sweet",
+        "Coconut"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "photo": "url",
+      "name": "Sweets"
+    }
+  ],
+  "profile": [
+    {
+      "id": 1,
+      "name": "Ricardo Dalarme",
+      "email": "ricardo@weasley@hotmail.com",
+      "photo": "URL",
+      "function": "Potato Master",
+      "likes": 23000,
+      "followers": 584
+    }
+  ],
+  "ingredient": [
+    {
+      "id": 1,
+      "name": "Tomate",
+      "photo": "URL"
+    },
+    {
+      "id": 2,
+      "name": "Cocô",
+      "photo": "URL"
+    }
+  ]
+}
