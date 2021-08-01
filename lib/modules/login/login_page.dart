@@ -1,11 +1,12 @@
 import 'package:desafio/localization/locale_extension.dart';
 import 'package:desafio/modules/login/components/facebook_button.dart';
-import 'package:desafio/widgets/text_input_field.dart';
+import 'package:desafio/modules/login/login_controller.dart';
 import 'package:desafio/routes/routes.dart';
+import 'package:desafio/widgets/text_input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends GetView<LoginController> {
   const LoginPage({Key? key}) : super(key: key);
 
   @override
@@ -53,7 +54,6 @@ class LoginPage extends StatelessWidget {
                   TextInputField(
                     hintText: LocaleKeys.password.tra,
                     isPassword: true,
-                  
                     buttonText: LocaleKeys.forgotPassowrd.tra,
                   ),
                   SizedBox(height: 30),

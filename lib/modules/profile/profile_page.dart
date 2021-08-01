@@ -1,4 +1,6 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:desafio/data/models/profile_model.dart';
 import 'package:desafio/localization/locale_extension.dart';
 import 'package:desafio/modules/profile/components/categories.dart';
 import 'package:desafio/modules/profile/components/food_card.dart';
@@ -7,7 +9,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ProfilePage extends GetView<ProfileController> {
-  const ProfilePage({Key? key}) : super(key: key);
+  ProfilePage({Key? key}) : super(key: key);
+
+  Profile profile = Get.arguments;
 
   @override
   Widget build(BuildContext context) {
@@ -63,13 +67,9 @@ class ProfilePage extends GetView<ProfileController> {
             SizedBox(height: 40),
             Row(
               children: [
-                Container(
-                  height: 100,
-                  width: 100,
-                  decoration: BoxDecoration(
-                    color: Colors.grey,
-                    shape: BoxShape.circle,
-                  ),
+                CircleAvatar(
+                  radius: 45,
+                  backgroundImage: CachedNetworkImageProvider(profile.photo),
                 ),
                 SizedBox(width: 20),
                 Expanded(
@@ -80,7 +80,7 @@ class ProfilePage extends GetView<ProfileController> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Nick Evans',
+                            profile.name,
                             style: textTheme.headline5,
                           ),
                           Icon(BootstrapIcons.pencil),
@@ -88,14 +88,14 @@ class ProfilePage extends GetView<ProfileController> {
                       ),
                       SizedBox(height: 3),
                       Text(
-                        'Potato Master',
+                        profile.function,
                         style: TextStyle(color: Colors.grey, fontSize: 18),
                       ),
                       SizedBox(height: 12),
                       Row(
                         children: [
                           Text(
-                            '584 ${LocaleKeys.followers.tra.toLowerCase()}',
+                            '${profile.followers} ${LocaleKeys.followers.tra.toLowerCase()}',
                             style: TextStyle(
                               color: Colors.grey,
                               fontSize: 16,
@@ -113,7 +113,7 @@ class ProfilePage extends GetView<ProfileController> {
                           ),
                           SizedBox(width: 10),
                           Text(
-                            '23k ${LocaleKeys.likes.tra.toLowerCase()}',
+                            '${profile.likes} ${LocaleKeys.likes.tra.toLowerCase()}',
                             style: TextStyle(
                               color: Colors.grey,
                               fontSize: 16,

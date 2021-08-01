@@ -1,7 +1,9 @@
 import 'package:desafio/localization/locale_extension.dart';
+import 'package:desafio/modules/login/login_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class FacebookButton extends StatelessWidget {
+class FacebookButton extends GetWidget<LoginController> {
   const FacebookButton({Key? key}) : super(key: key);
 
   @override
@@ -13,7 +15,9 @@ class FacebookButton extends StatelessWidget {
       borderRadius: borderRadius,
       child: InkWell(
         borderRadius: borderRadius,
-        onTap: () {},
+        onTap: () async {
+          controller.login();
+        },
         child: Container(
             width: double.infinity,
             decoration: BoxDecoration(
