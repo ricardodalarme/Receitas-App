@@ -1,40 +1,4 @@
 {
-  "recipes": [
-    {
-      "id": 1,
-      "name": "Pavê",
-      "categoryId": 1,
-      "coverPhoto": "",
-      "galleryPhotos": [
-        "",
-        ""
-      ],
-      "ingredientsId": [
-        1,
-        2
-      ],
-      "howToCook": [
-        "text",
-        "text"
-      ],
-      "servingTime": 12112,
-      "nutritionFacts": [
-        "6.2g fat",
-        "222 calories"
-      ],
-      "tags": [
-        "Sweet",
-        "Coconut"
-      ]
-    }
-  ],
-  "categories": [
-    {
-      "id": 1,
-      "photo": "url",
-      "name": "Sweets"
-    }
-  ],
   "profile": [
     {
       "id": 1,
@@ -46,16 +10,211 @@
       "followers": 584
     }
   ],
-  "ingredient": [
+  "recipes": [
     {
       "id": 1,
-      "name": "Tomate",
-      "photo": "URL"
+      "categoryId": 1,
+      "name": "Easy Broccoli Bacon Salad",
+      "coverPhoto": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F2264735.jpg&w=648&h=434&c=sc&poi=face&q=85",
+      "galleryPhotos": [
+        "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F2316010.jpg&w=648&h=861&c=sc&poi=face&q=85",
+        "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F8681050.jpg&q=85",
+        "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5636306.jpg&w=648&h=648&c=sc&poi=face&q=85"
+      ],
+      "ingredientsId": [
+        4,
+        5,
+        7
+      ],
+      "howToCook": [
+        "Combine broccoli, onion, bacon, raisins, and sunflower seeds in a bowl.",
+        "Whisk mayonnaise, sugar, and red wine vinegar together in a bowl until dressing is smooth; pour over broccoli mixture and stir to coat."
+      ],
+      "servingTime": 5,
+      "nutritionFacts": [
+        "262 calories",
+        "protein 6.3g",
+        "carbohydrates 2.1g",
+        "fat 19.9g",
+        "cholesterol 44.2mg",
+        "sodium 229mg"
+      ],
+      "tags": [
+        "Sweet",
+        "Coconut"
+      ]
     },
     {
       "id": 2,
-      "name": "Cocô",
-      "photo": "URL"
+      "categoryId": 1,
+      "name": "Best-Ever Texas Caviar",
+      "coverPhoto": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F397218.jpg&w=807&h=807&c=sc&poi=face&q=85",
+      "galleryPhotos": [
+        "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F3232591.jpg&w=631&h=839&c=sc&poi=face&q=85",
+        "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F2294330.jpg&w=631&h=631&c=sc&poi=face&q=85",
+        "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F4476241.jpg&w=631&h=631&c=sc&poi=face&q=85"
+      ],
+      "ingredientsId": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "howToCook": [
+        "Mix the black beans, pinto beans, white corn, green chiles, jalapeno pepper, red and green bell peppers, red onion, and cilantro together in a large bowl.",
+        "To make the dressing, stir the rice vinegar, olive oil, sugar, and garlic powder together in a pan. Bring to a boil, then remove from heat, and cool. Pour dressing over bean mixture, and toss to mix evenly."
+      ],
+      "servingTime": 25,
+      "nutritionFacts": [
+        "262 calories",
+        "protein 6.3g",
+        "carbohydrates 2.1g",
+        "fat 19.9g",
+        "cholesterol 44.2mg",
+        "sodium 229mg"
+      ],
+      "tags": [
+        "Sweet",
+        "Coconut"
+      ]
+    },
+    {
+      "id": 3,
+      "categoryId": 1,
+      "name": "Southern Pimento Cheese",
+      "coverPhoto": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5096291.jpg&w=807&h=807&c=sc&poi=face&q=85",
+      "galleryPhotos": [
+        "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F822606.jpg&w=807&h=807&c=sc&poi=face&q=85",
+        "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F3593581.jpg&w=807&h=1073&c=sc&poi=face&q=85",
+        "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F2253531.jpg&w=807&h=807&c=sc&poi=face&q=85",
+        "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5962431.jpg&w=807&h=807&c=sc&poi=face&q=85",
+        "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F722721.jpg&w=807&h=807&c=sc&poi=face&q=85"
+      ],
+      "ingredientsId": [
+        1,
+        2,
+        3
+      ],
+      "howToCook": [
+        "Place the Cheddar cheese, cream cheese, mayonnaise, garlic powder, cayenne pepper, onion powder, minced jalapeno, and pimento into the large bowl of a mixer",
+        "Beat at medium speed, with paddle if possible, until thoroughly combined. Season to taste with salt and black pepper."
+      ],
+      "servingTime": 5,
+      "nutritionFacts": [
+        "208 calories",
+        "protein 6.3g",
+        "carbohydrates 2.1g",
+        "fat 19.9g",
+        "cholesterol 44.2mg",
+        "sodium 229mg"
+      ],
+      "tags": [
+        "Sweet",
+        "Coconut"
+      ]
+    },
+    {
+      "id": 4,
+      "categoryId": 1,
+      "name": "Shoepeg Corn Salad",
+      "coverPhoto": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F1166630.jpg&w=648&h=648&c=sc&poi=face&q=85",
+      "galleryPhotos": [
+        "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F9322920.jpg&q=85",
+        "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F8044164.jpg&q=85",
+        "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F9226863.jpg&q=85"
+      ],
+      "ingredientsId": [
+        2,
+        3
+      ],
+      "howToCook": [
+        "Place the Cheddar cheese, cream cheese, mayonnaise, garlic powder, cayenne pepper, onion powder, minced jalapeno, and pimento into the large bowl of a mixer",
+        "Beat at medium speed, with paddle if possible, until thoroughly combined. Season to taste with salt and black pepper."
+      ],
+      "servingTime": 20,
+      "nutritionFacts": [
+        "208 calories",
+        "protein 6.3g",
+        "carbohydrates 2.1g",
+        "fat 19.9g",
+        "cholesterol 44.2mg",
+        "sodium 229mg"
+      ],
+      "tags": [
+        "Sweet",
+        "Coconut"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "photo": "https://c.ndtvimg.com/2019-10/o52ta3a8_sweets-_625x300_26_October_19.jpg",
+      "name": "Sweets"
+    },
+    {
+      "id": 2,
+      "photo": "https://media-cdn.tripadvisor.com/media/photo-s/15/c7/cd/a0/authentic-italian-cuisine.jpg",
+      "name": "Italian"
+    },
+    {
+      "id": 3,
+      "photo": "https://c.ndtvimg.com/2020-04/chd4rs3g_dessert_625x300_07_April_20.jpg",
+      "name": "Desserts"
+    },
+    {
+      "id": 4,
+      "photo": "https://c4.wallpaperflare.com/wallpaper/553/808/884/food-fazer-chocolate-wallpaper-preview.jpg",
+      "name": "Chocolates"
+    },
+    {
+      "id": 5,
+      "photo": "https://www.christineabroad.com/images//2019/09/japanese-food.webp",
+      "name": "Japanese"
+    },
+    {
+      "id": 6,
+      "photo": "https://static.thehoneycombers.com/wp-content/uploads/sites/2/2020/08/bakers-brew-birthday-cakes-singapore-900x643.png",
+      "name": "cakes"
+    }
+  ],
+  "ingredients": [
+    {
+      "id": 1,
+      "name": "Lemoanade",
+      "photo": "https://aprettylifeinthesuburbs.com/wp-content/uploads/2013/07/Fresh-Lemonade-Recipe.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Coconut",
+      "photo": "https://cdn.entrypoint.directory/assets/46746/produtos/616078/11186iu.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Peppers",
+      "photo": "https://lmg-labmanager.s3.amazonaws.com/assets/articleNo/24635/aImg/45652/bell-peppers-m.png"
+    },
+    {
+      "id": 4,
+      "name": "Egg",
+      "photo": "https://www.licious.in/blog/wp-content/uploads/2021/01/eggs-online-2-750x750.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Milk",
+      "photo": "https://www.canberratimes.com.au/images/transform/v1/crop/frm/matthew.crossman/180a0626-edc1-47d4-9797-8aecec9856d0.jpg/r0_0_5184_3456_w1200_h678_fmax.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Sugar",
+      "photo": "https://www.foodbusinessnews.net/ext/resources/2020/7/SpoonfulOfSugar_Lead.jpg?t=1594729497&width=1080"
+    },
+    {
+      "id": 7,
+      "name": "Salt",
+      "photo": "https://watitifoodsmart.com/wp-content/uploads/2020/04/salt-2-191031.jpg"
     }
   ]
 }

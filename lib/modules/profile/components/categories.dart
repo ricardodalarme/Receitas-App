@@ -5,8 +5,12 @@ class Categories extends StatelessWidget {
   final String title;
   final bool isCurrent;
 
-  Categories(this.quantity, this.title, this.isCurrent, {Key? key})
-      : super(key: key);
+  Categories(
+    this.quantity,
+    this.title,
+    this.isCurrent, {
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +35,7 @@ class Categories extends StatelessWidget {
         Visibility(
           visible: isCurrent,
           child: Container(
-            height: 8,
+            height: 5,
             width: 100,
             decoration: BoxDecoration(
               color: Theme.of(context).primaryColor,

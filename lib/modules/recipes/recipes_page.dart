@@ -20,6 +20,20 @@ class RecipesPage extends GetView<RecipesController> {
             child: Column(
               children: [
                 Row(
+                  children: [
+                    Icon(
+                      BootstrapIcons.chevron_left,
+                      color: Colors.grey,
+                    ),
+                    SizedBox(width: 10),
+                    Text(
+                      LocaleKeys.backProfile.tra,
+                      style: textTheme.bodyText2,
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -43,7 +57,7 @@ class RecipesPage extends GetView<RecipesController> {
                           color: Colors.grey.withOpacity(0.1),
                           spreadRadius: 5,
                           blurRadius: 6,
-                          offset: Offset(0, 3), 
+                          offset: Offset(0, 3),
                         ),
                       ],
                     ),
@@ -64,6 +78,7 @@ class RecipesPage extends GetView<RecipesController> {
               ],
             ),
           ),
+          SizedBox(height: 15),
           Expanded(
             child: Obx(() {
               final recipes = controller.categories;

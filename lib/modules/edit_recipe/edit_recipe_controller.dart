@@ -7,7 +7,7 @@ class EditRecipeController extends GetxController {
 
   EditRecipeController(this._httpRepository);
 
-  var categories = <Recipe>[].obs;
+  var recipe = Recipe().obs;
 
   @override
   void onInit() {
@@ -19,7 +19,7 @@ class EditRecipeController extends GetxController {
     final userId = int.parse(Get.parameters['id']!);
 
     try {
-      categories.value = await _httpRepository.getRecipe(userId);
+      recipe.value = await _httpRepository.getRecipe(userId);
     } catch (e) {
       print(e);
     }

@@ -48,7 +48,7 @@ class RecipeCard extends StatelessWidget {
                     topRight: Radius.circular(10),
                   ),
                   child: Image.network(
-                    recipe.coverPhoto,
+                    recipe.coverPhoto!,
                     height: 150,
                     fit: BoxFit.cover,
                   )),
@@ -58,7 +58,7 @@ class RecipeCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      recipe.name,
+                      recipe.name!,
                       style: textTheme.headline5,
                     ),
                     SizedBox(height: 15),
@@ -71,7 +71,7 @@ class RecipeCard extends StatelessWidget {
                               '+- ${recipe.servingTime} min',
                             ),
                             SizedBox(width: 15),
-                            Text('${recipe.ingredientsId.length} ingredients'),
+                            Text('${recipe.ingredientsId!.length} ingredients'),
                           ],
                         ),
                         Container(
