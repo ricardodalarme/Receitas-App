@@ -13,7 +13,14 @@ import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 
 class EditRecipePage extends GetView<EditRecipeController> {
-  const EditRecipePage({Key? key}) : super(key: key);
+  EditRecipePage({Key? key}) : super(key: key);
+
+  final cards = [
+    GalleryCard(),
+    IngredientsCard(),
+    HowToCookCard(),
+    InfoCard(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -54,19 +61,14 @@ class EditRecipePage extends GetView<EditRecipeController> {
                     Expanded(
                       child: TextInputField(
                         hintText: LocaleKeys.recipeName.tra,
+                        controller: controller.nameController,
                       ),
                     ),
                   ],
                 ),
                 SizedBox(height: 40),
-                GalleryCard(),
+                ...cards,
                 SizedBox(height: 20),
-                IngredientsCard(),
-                SizedBox(height: 20),
-                HowToCookCard(),
-                SizedBox(height: 20),
-                InfoCard(),
-                SizedBox(height: 40),
                 Text('Save To'),
                 SizedBox(height: 15),
                 Row(

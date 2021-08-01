@@ -13,7 +13,7 @@ class EditedCard extends GetWidget<EditRecipeController> {
     final textTheme = Theme.of(context).textTheme;
 
     return Container(
-      margin: EdgeInsets.only(bottom: 10),
+      margin: EdgeInsets.only(bottom: 25),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),

@@ -4,12 +4,14 @@ class TextInputField extends StatelessWidget {
   final String hintText;
   final bool isPassword;
   final String? buttonText;
-  
+  final TextEditingController? controller;
+
   const TextInputField({
     Key? key,
     required this.hintText,
     this.isPassword = false,
     this.buttonText,
+    this.controller,
   }) : super(key: key);
 
   @override
@@ -23,7 +25,10 @@ class TextInputField extends StatelessWidget {
             if (buttonText != null) Text(buttonText!),
           ],
         ),
-        TextField(obscureText: isPassword),
+        TextField(
+          obscureText: isPassword,
+          controller: controller,
+        ),
       ],
     );
   }
