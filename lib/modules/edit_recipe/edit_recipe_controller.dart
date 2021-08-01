@@ -1,3 +1,4 @@
+import 'package:desafio/data/models/ingredient_model.dart';
 import 'package:desafio/data/models/recipe_model.dart';
 import 'package:desafio/data/repositories/edit_recipe_repository.dart';
 import 'package:flutter/widgets.dart';
@@ -9,6 +10,7 @@ class EditRecipeController extends GetxController {
   EditRecipeController(this._httpRepository);
 
   var recipe = Rx<Recipe?>(null);
+  var ingredients = <Ingredient>[].obs;
   final nameController = TextEditingController();
 
   @override
@@ -22,6 +24,8 @@ class EditRecipeController extends GetxController {
 
     try {
       recipe.value = await _httpRepository.getRecipe(userId);
+      ingredients.value =
+          await _httpRepository.getIngredients(recipe.value!.ingredientsId);
       nameController.text = recipe.value!.name;
     } catch (e) {
       print(e);

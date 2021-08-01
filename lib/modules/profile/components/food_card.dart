@@ -14,7 +14,9 @@ class FoodCard extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     return InkWell(
       onTap: () {
-        Get.toNamed(Routes.recipes);
+        final route =
+            Routes.recipes.replaceFirst(':id', category.id.toString());
+        Get.toNamed(route);
       },
       child: Container(
         decoration: BoxDecoration(
