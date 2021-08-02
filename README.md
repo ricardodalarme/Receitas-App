@@ -107,6 +107,18 @@ Nessa última tela são exibidas todas as informações relacionadas à receita.
       ]
     }
 
+## Ambiente
+
+Todo o projeto foi testado no *Android Virtual Device*. 
+
+- **Resolução:** 720 x 1480 
+- **Versão do Android:** 11
+
+O AVD usa 10.0.2.2 como endereço, caso queira usar um dispositivo físico será necessário alterar a *baseUrl* em: 
+
+```
+/lib/core/values/end_points.dart
+```
 
 ## Executando
 

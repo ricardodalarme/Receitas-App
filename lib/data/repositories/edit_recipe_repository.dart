@@ -1,12 +1,13 @@
+import 'package:desafio/core/values/end_points.dart';
 import 'package:desafio/data/models/ingredient_model.dart';
 import 'package:desafio/data/models/recipe_model.dart';
 import 'package:get/get_connect/connect.dart';
 
 class EditRecipeRepository extends GetConnect {
   Future<Recipe> getRecipe(int id) async {
-    final response = await get('http://10.0.2.2:3000/recipes/$id');
+    final response = await get('${EndPoints.recipes}/$id');
     if (response.hasError) {
-      throw Exception('Erro ao buscar usuários');
+      throw Exception('Erro ao buscar receita');
     }
 
     return Recipe.fromJson(response.body);
@@ -19,7 +20,7 @@ class EditRecipeRepository extends GetConnect {
     }
 
     final response =
-        await get('http://10.0.2.2:3000/ingredients$query', decoder: (body) {
+        await get('${EndPoints.ingredients}$query', decoder: (body) {
       if (body is List) {
         return body
             .map<Ingredient>((resp) => Ingredient.fromJson(resp))
@@ -29,7 +30,7 @@ class EditRecipeRepository extends GetConnect {
     });
 
     if (response.hasError) {
-      throw Exception('Erro ao buscar usuários');
+      throw Exception('Erro ao buscar ingredientes');
     }
     return response.body ?? <Ingredient>[];
   }

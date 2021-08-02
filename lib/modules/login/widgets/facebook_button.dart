@@ -36,7 +36,7 @@ class FacebookButton extends GetWidget<LoginController> {
                   LocaleKeys.facebookLogin.tra,
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 30,
+                      fontSize: 22,
                       fontWeight: FontWeight.w700),
                 ),
               ],

@@ -94,19 +94,14 @@ class ProfilePage extends GetView<ProfileController> {
                               SizedBox(height: 3),
                               Text(
                                 profile.function,
-                                style:
-                                    TextStyle(color: Colors.grey, fontSize: 18),
+                                style: textTheme.subtitle1,
                               ),
                               SizedBox(height: 12),
                               Row(
                                 children: [
                                   Text(
                                     '${profile.followers} ${LocaleKeys.followers.tra.toLowerCase()}',
-                                    style: TextStyle(
-                                      color: Colors.grey,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                    ),
+                                    style: textTheme.bodyText2,
                                   ),
                                   SizedBox(width: 10),
                                   Container(
@@ -120,11 +115,7 @@ class ProfilePage extends GetView<ProfileController> {
                                   SizedBox(width: 10),
                                   Text(
                                     '${profile.likes} ${LocaleKeys.likes.tra.toLowerCase()}',
-                                    style: TextStyle(
-                                      color: Colors.grey,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                    ),
+                                    style: textTheme.bodyText2,
                                   ),
                                 ],
                               ),
@@ -137,6 +128,7 @@ class ProfilePage extends GetView<ProfileController> {
                     Divider(),
                     SizedBox(height: 20),
                     Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Categories(20, LocaleKeys.recipes.tra, true),
@@ -145,7 +137,10 @@ class ProfilePage extends GetView<ProfileController> {
                             profile.following, LocaleKeys.following.tra, false),
                       ],
                     ),
-                    Divider(),
+                    Container(
+                      height: 0.8,
+                      color: Colors.black12,
+                    ),
                   ],
                 );
               },
