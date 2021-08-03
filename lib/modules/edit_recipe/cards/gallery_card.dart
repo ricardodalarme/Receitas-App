@@ -32,26 +32,38 @@ class GalleryCard extends EditedCard {
             break;
           }
 
-          images.add(GalleryPhoto(recipe.galleryPhotos[i]));
+          images.add(
+            Flexible(
+              flex: 3,
+              child: GalleryPhoto(
+                recipe.galleryPhotos[i],
+                last: i == recipe.galleryPhotos.length - 1,
+              ),
+            ),
+          );
         }
 
         if (recipe.galleryPhotos.length > maxImages)
           images.add(
-            Stack(
-              children: [
-                GalleryPhoto(
-                  recipe.galleryPhotos[maxImages],
-                  filter: true,
-                ),
-                Positioned.fill(
-                  child: Align(
-                      alignment: Alignment.center,
-                      child: Text(
-                        '+$difference',
-                        style: textTheme.button,
-                      )),
-                ),
-              ],
+            Flexible(
+              flex: 3,
+              child: Stack(
+                children: [
+                  GalleryPhoto(
+                    recipe.galleryPhotos[maxImages],
+                    filter: true,
+                    last: true,
+                  ),
+                  Positioned.fill(
+                    child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          '+$difference',
+                          style: textTheme.button,
+                        )),
+                  ),
+                ],
+              ),
             ),
           );
 
@@ -64,8 +76,8 @@ class GalleryCard extends EditedCard {
                 width: double.infinity,
                 fit: BoxFit.cover,
               ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+            Flex(
+              direction: Axis.horizontal,
               children: images,
             )
           ],

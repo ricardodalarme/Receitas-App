@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class TextInputField extends StatelessWidget {
   final String hintText;
@@ -21,8 +22,15 @@ class TextInputField extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(hintText),
-            if (buttonText != null) Text(buttonText!),
+            Text(
+              hintText,
+              style: Get.theme.textTheme.subtitle2,
+            ),
+            if (buttonText != null)
+              Text(
+                buttonText!,
+                style: Get.theme.textTheme.subtitle1,
+              ),
           ],
         ),
         TextField(

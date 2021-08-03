@@ -30,10 +30,10 @@ class ProfilePage extends GetView<ProfileController> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Icon(BootstrapIcons.search, size: 30),
-            Icon(BootstrapIcons.square, size: 30),
+            Icon(BootstrapIcons.search, size: 20),
+            Icon(BootstrapIcons.square, size: 20),
             Icon(BootstrapIcons.egg,
-                size: 30, color: Theme.of(context).primaryColor),
+                size: 20, color: Theme.of(context).primaryColor),
           ],
         ),
       ),
@@ -47,7 +47,7 @@ class ProfilePage extends GetView<ProfileController> {
               children: [
                 Text(
                   LocaleKeys.myKitchen.tra,
-                  style: textTheme.headline2,
+                  style: textTheme.headline3,
                 ),
                 Row(
                   children: [
@@ -64,8 +64,10 @@ class ProfilePage extends GetView<ProfileController> {
             SizedBox(height: 40),
             Obx(
               () {
-                final profile = controller.profile.value!;
-
+                final profile = controller.profile.value;
+                if (profile == null) {
+                  return CircularProgressIndicator();
+                }
                 return Column(
                   children: [
                     Row(
@@ -88,25 +90,28 @@ class ProfilePage extends GetView<ProfileController> {
                                     profile.name,
                                     style: textTheme.headline5,
                                   ),
-                                  Icon(BootstrapIcons.pencil),
+                                  Icon(
+                                    BootstrapIcons.pencil,
+                                    size: 18,
+                                  ),
                                 ],
                               ),
                               SizedBox(height: 3),
                               Text(
                                 profile.function,
-                                style: textTheme.subtitle1,
+                                style: textTheme.subtitle2,
                               ),
                               SizedBox(height: 12),
                               Row(
                                 children: [
                                   Text(
                                     '${profile.followers} ${LocaleKeys.followers.tra.toLowerCase()}',
-                                    style: textTheme.bodyText2,
+                                    style: textTheme.subtitle2,
                                   ),
                                   SizedBox(width: 10),
                                   Container(
-                                    height: 5,
-                                    width: 5,
+                                    height: 3,
+                                    width: 3,
                                     decoration: BoxDecoration(
                                       color: Colors.grey,
                                       shape: BoxShape.circle,
@@ -115,7 +120,7 @@ class ProfilePage extends GetView<ProfileController> {
                                   SizedBox(width: 10),
                                   Text(
                                     '${profile.likes} ${LocaleKeys.likes.tra.toLowerCase()}',
-                                    style: textTheme.bodyText2,
+                                    style: textTheme.subtitle2,
                                   ),
                                 ],
                               ),
@@ -124,7 +129,7 @@ class ProfilePage extends GetView<ProfileController> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 15),
                     Divider(),
                     SizedBox(height: 20),
                     Row(

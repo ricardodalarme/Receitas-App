@@ -4,8 +4,7 @@ class Topics extends StatelessWidget {
   final int numberPass;
   final String description;
 
-  Topics(this.numberPass, this.description, {Key? key})
-      : super(key: key);
+  Topics(this.numberPass, this.description, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +19,14 @@ class Topics extends StatelessWidget {
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             border: Border.all(
-              width: 2,
+              width: 1,
               color: Theme.of(context).primaryColor,
             ),
           ),
           child: Center(
             child: Text(
               '$numberPass',
-              style: TextStyle(
+              style: textTheme.bodyText2!.copyWith(
                 color: Theme.of(context).primaryColor,
               ),
             ),
@@ -37,7 +36,7 @@ class Topics extends StatelessWidget {
         Flexible(
           child: Text(
             description,
-            style: textTheme.bodyText1,
+            style: textTheme.bodyText2,
           ),
         ),
       ],

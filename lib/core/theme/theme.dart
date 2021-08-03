@@ -5,26 +5,52 @@ ThemeData makeAppTheme() {
   final secondaryColor = Color(0xFFF8B449);
   final textColor = Color(0xFF030F09);
   final secondaryTextColor = Color(0xFF606060);
-  //final hintColor = Color(0xFF606060);
+  final hintColor = Color(0xFFa8a8a8);
   final dividerColor = Color(0xFFCCCCCC);
 
   final textTheme = TextTheme(
     headline2: TextStyle(
-      fontSize: 32,
+      fontSize: 26,
+      color: textColor,
+    ),
+    headline3: TextStyle(
+      fontSize: 20,
       color: textColor,
     ),
     headline5: TextStyle(
-      fontSize: 20,
+      fontSize: 18,
       color: textColor,
-      fontWeight: FontWeight.w500,
+      fontWeight: FontWeight.w400,
     ),
     headline6: TextStyle(
       fontSize: 16,
       color: primaryColor,
+      fontWeight: FontWeight.w400,
+    ),
+    bodyText1: TextStyle(
+      fontSize: 16,
+      color: textColor,
+      fontWeight: FontWeight.w400,
     ),
     bodyText2: TextStyle(
       fontSize: 14,
+      color: textColor,
+      fontWeight: FontWeight.w400,
+    ),
+    subtitle1: TextStyle(
+      fontSize: 14,
       color: secondaryTextColor,
+      fontWeight: FontWeight.w400,
+    ),
+    subtitle2: TextStyle(
+      fontSize: 14,
+      color: hintColor,
+      fontWeight: FontWeight.w400,
+    ),
+    caption: TextStyle(
+     fontSize: 12,
+      color: textColor,
+      fontWeight: FontWeight.w400,
     ),
     button: TextStyle(
       fontSize: 18,

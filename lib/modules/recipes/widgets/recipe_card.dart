@@ -33,8 +33,8 @@ class RecipeCard extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.15),
-              spreadRadius: 5,
-              blurRadius: 6,
+              spreadRadius: 1,
+              blurRadius: 3,
             ),
           ],
         ),
@@ -69,14 +69,22 @@ class RecipeCard extends StatelessWidget {
                           Text(
                             '+- ${recipe.servingTime} min',
                           ),
-                          SizedBox(width: 15),
+                          Container(
+                            margin: EdgeInsets.symmetric(horizontal: 15),
+                            height: 3,
+                            width: 3,
+                            decoration: BoxDecoration(
+                              color: Colors.grey,
+                              shape: BoxShape.circle,
+                            ),
+                          ),
                           Text(
                               '${recipe.ingredientsId.length} ${LocaleKeys.ingredients.tra.toLowerCase()}'),
                         ],
                       ),
                       Container(
                         padding:
-                            EdgeInsets.symmetric(vertical: 2, horizontal: 7),
+                            EdgeInsets.symmetric(vertical: 2, horizontal: 8),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(

@@ -13,7 +13,11 @@ class HowToCookCard extends EditedCard {
   @override
   Widget body(BuildContext context) {
     return Obx(() {
-      final recipe = controller.recipe.value!;
+      final recipe = controller.recipe.value;
+
+      if (recipe == null) {
+        return CircularProgressIndicator();
+      }
 
       return Column(
         children: List.generate(recipe.howToCook.length, (i) {

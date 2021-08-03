@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Categories extends StatelessWidget {
   final int quantity;
@@ -24,12 +25,11 @@ class Categories extends StatelessWidget {
             fontSize: 24,
           ),
         ),
-        SizedBox(height: 20),
+        SizedBox(height: 15),
         Text(
           title,
-          style: TextStyle(
+          style: Get.theme.textTheme.bodyText1!.copyWith(
             color: isCurrent ? Colors.black : Colors.grey,
-            fontSize: 18,
           ),
         ),
         SizedBox(height: 10),

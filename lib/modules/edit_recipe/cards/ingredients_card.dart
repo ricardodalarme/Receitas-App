@@ -57,7 +57,7 @@ class IngredientsCard extends EditedCard {
             Text(
               ingredients.map((element) => element.name).join(', '),
               overflow: TextOverflow.ellipsis,
-              style: textTheme.bodyText1,
+              style: textTheme.caption,
             ),
           ],
         );

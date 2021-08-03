@@ -21,7 +21,7 @@ class BackLabelButton extends StatelessWidget {
           SizedBox(width: 10),
           Text(
             text,
-            style: textTheme.bodyText2,
+            style: textTheme.subtitle1,
           ),
         ],
       ),

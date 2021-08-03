@@ -34,7 +34,7 @@ class LoginPage extends GetView<LoginController> {
                   top: 100,
                   child: Text(
                     LocaleKeys.welcomeBack.tra,
-                    style: textTheme.headline2,
+                    style: textTheme.headline3,
                   ),
                 ),
               ],
@@ -46,9 +46,9 @@ class LoginPage extends GetView<LoginController> {
                 children: [
                   Text(
                     LocaleKeys.pleaseLogin.tra,
-                    style: textTheme.bodyText2,
+                    style: textTheme.subtitle1,
                   ),
-                  SizedBox(height: 70),
+                  SizedBox(height: 60),
                   TextInputField(hintText: LocaleKeys.emailAddress.tra),
                   SizedBox(height: 30),
                   TextInputField(
@@ -61,7 +61,11 @@ class LoginPage extends GetView<LoginController> {
                     onPressed: () {
                       Get.offAllNamed(Routes.profile);
                     },
-                    child: Text(LocaleKeys.login.tra),
+                    child: Text(
+                      LocaleKeys.login.tra,
+                      style: textTheme.headline6!.copyWith(
+                          color: Colors.white, fontWeight: FontWeight.w400),
+                    ),
                   ),
                   SizedBox(height: 15),
                   FacebookButton(),
@@ -71,12 +75,13 @@ class LoginPage extends GetView<LoginController> {
                       children: [
                         Text(
                           LocaleKeys.newUser.tra,
-                          style: textTheme.bodyText2,
+                          style: textTheme.subtitle2,
                         ),
                         SizedBox(height: 10),
                         Text(
                           LocaleKeys.createAccount.tra,
-                          style: textTheme.headline6,
+                          style: textTheme.headline6!
+                              .copyWith(fontWeight: FontWeight.normal),
                         ),
                       ],
                     ),

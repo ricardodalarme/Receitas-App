@@ -11,8 +11,8 @@ class IngredientPhoto extends StatelessWidget {
   Widget build(BuildContext context) {
     return CachedNetworkImage(
       imageUrl: url,
-      height: 75,
-      width: 75,
+      height: 50,
+      width: 50,
       fit: BoxFit.cover,
       imageBuilder: (context, imageProvider) => Container(
         margin: EdgeInsets.only(right: 10),

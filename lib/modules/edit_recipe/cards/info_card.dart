@@ -14,7 +14,11 @@ class InfoCard extends EditedCard {
     final textTheme = Theme.of(context).textTheme;
 
     return Obx(() {
-      final recipe = controller.recipe.value!;
+      final recipe = controller.recipe.value;
+
+      if (recipe == null) {
+        return CircularProgressIndicator();
+      }
 
       return Column(
         children: [
@@ -25,13 +29,13 @@ class InfoCard extends EditedCard {
                 width: 120,
                 child: Text(
                   LocaleKeys.savingTime.tra,
-                  style: textTheme.bodyText2,
+                  style: textTheme.subtitle1,
                 ),
               ),
               Flexible(
                 child: Text(
                   '${recipe.servingTime} Mins',
-                  style: textTheme.bodyText1,
+                  style: textTheme.bodyText2,
                 ),
               ),
             ],
@@ -44,7 +48,7 @@ class InfoCard extends EditedCard {
                 width: 120,
                 child: Text(
                   LocaleKeys.nutritionFacts.tra,
-                  style: textTheme.bodyText2,
+                  style: textTheme.subtitle1,
                 ),
               ),
               Column(
@@ -54,7 +58,7 @@ class InfoCard extends EditedCard {
                     padding: const EdgeInsets.only(bottom: 5),
                     child: Text(
                       fact,
-                      style: textTheme.bodyText1,
+                      style: textTheme.bodyText2,
                     ),
                   );
                 }).toList(),
@@ -69,13 +73,13 @@ class InfoCard extends EditedCard {
                 width: 120,
                 child: Text(
                   LocaleKeys.tags.tra,
-                  style: textTheme.bodyText2,
+                  style: textTheme.subtitle1,
                 ),
               ),
               Flexible(
                 child: Text(
                   recipe.tags.join(', '),
-                  style: textTheme.bodyText1,
+                  style: textTheme.bodyText2,
                 ),
               ),
             ],

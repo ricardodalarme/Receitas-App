@@ -26,7 +26,7 @@ class RecipesPage extends GetView<RecipesController> {
               children: [
                 Text(
                   LocaleKeys.myRecipes.tra,
-                  style: textTheme.headline2,
+                  style: textTheme.headline3,
                 ),
                 Text(
                   LocaleKeys.addNews.tra,
@@ -42,7 +42,7 @@ class RecipesPage extends GetView<RecipesController> {
                         '${controller.category.value!.name} (${controller.recipes.length})');
               return Container();
             }),
-            SizedBox(height: 30),
+            SizedBox(height: 10),
             Obx(() {
               final recipes = controller.recipes;
               return ListView.builder(

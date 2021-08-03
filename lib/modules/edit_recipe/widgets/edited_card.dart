@@ -19,9 +19,9 @@ class EditedCard extends GetWidget<EditRecipeController> {
         borderRadius: BorderRadius.circular(10),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.15),
-            spreadRadius: 5,
-            blurRadius: 6,
+           color: Colors.grey.withOpacity(0.15),
+            spreadRadius: 1,
+            blurRadius: 3,
           ),
         ],
       ),
@@ -34,10 +34,11 @@ class EditedCard extends GetWidget<EditRecipeController> {
               children: [
                 Text(
                   title,
-                  style: textTheme.headline5,
+                  style: textTheme.bodyText1,
                 ),
                 Icon(
                   BootstrapIcons.pencil,
+                  size: 18,
                   color: Theme.of(context).primaryColor,
                 ),
               ],

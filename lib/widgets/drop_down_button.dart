@@ -17,20 +17,19 @@ class DropDownButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(7),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.1),
-            spreadRadius: 5,
-            blurRadius: 6,
-            offset: Offset(0, 3),
+            color: Colors.grey.withOpacity(0.15),
+            spreadRadius: 1,
+            blurRadius: 3,
           ),
         ],
       ),
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.all(15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             text,
-            style: textTheme.button,
+            style: textTheme.bodyText1,
           ),
           Icon(
             BootstrapIcons.chevron_down,

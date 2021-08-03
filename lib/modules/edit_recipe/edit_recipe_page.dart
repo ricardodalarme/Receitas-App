@@ -44,7 +44,7 @@ class EditRecipePage extends GetView<EditRecipeController> {
                 SizedBox(height: 20),
                 Text(
                   LocaleKeys.editRecipe.tra,
-                  style: textTheme.headline2,
+                  style: textTheme.headline3,
                 ),
                 SizedBox(height: 40),
                 Row(
@@ -83,7 +83,7 @@ class EditRecipePage extends GetView<EditRecipeController> {
                       child: InkWell(
                         onTap: () => {},
                         child: Container(
-                          height: 60,
+                          height: 52,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             border: Border.all(
@@ -95,9 +95,8 @@ class EditRecipePage extends GetView<EditRecipeController> {
                           child: Center(
                             child: Text(
                               LocaleKeys.saveRecipe.tra,
-                              style: TextStyle(
+                              style: textTheme.bodyText1!.copyWith(
                                 color: Theme.of(context).primaryColor,
-                                fontSize: 16,
                               ),
                             ),
                           ),
@@ -106,20 +105,23 @@ class EditRecipePage extends GetView<EditRecipeController> {
                     ),
                   ],
                 ),
-                SizedBox(height: 40),
+                SizedBox(height: 25),
                 ElevatedButton(
                   onPressed: () {},
                   child: Text(LocaleKeys.postFeed.tra),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 25),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(BootstrapIcons.trash),
+                    Icon(
+                      BootstrapIcons.trash,
+                      size: 14,
+                    ),
                     SizedBox(width: 10),
                     Text(
                       LocaleKeys.removeFromCookbook.tra,
-                      style: textTheme.bodyText1,
+                      style: textTheme.bodyText2,
                     )
                   ],
                 )
